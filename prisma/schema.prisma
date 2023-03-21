@@ -21,6 +21,7 @@ model User {
   level String @default("user") @db.VarChar(10)
 
   Session Session[]
+  Product Product[]
 
   @@map("users")
 }
@@ -37,4 +38,20 @@ model Session {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
+}
+
+model Product {
+  id        String @id @default(cuid())
+  createdAt Int
+  updatedAt Int
+
+  name        String @db.VarChar(200)
+  description String
+  price       Int
+  amount      Int
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("products")
 }

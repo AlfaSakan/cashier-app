@@ -1,9 +1,9 @@
-import { cookiesKey } from '$lib/client/constants/cookies.constant';
-import { errorMessages } from '$lib/client/constants/error.constant';
-import type { ValidatePasswordUser } from '$lib/schema/user.schema';
 import { sessionMock, tokenMock } from '$lib/__mocks__/dummy/session.dummy';
 import { userMock } from '$lib/__mocks__/dummy/user.dummy';
 import prismaMock from '$lib/__mocks__/prisma';
+import { cookiesKey } from '$lib/client/constants/cookies.constant';
+import { errorMessages } from '$lib/client/constants/error.constant';
+import type { ValidatePasswordUser } from '$lib/schema/user.schema';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
@@ -54,8 +54,6 @@ describe('AuthService', () => {
 	const authService = new AuthService(new UserService());
 
 	describe('login', () => {
-		const tokenMock = { accessToken: 'accessToken', refreshToken: 'refreshToken' };
-
 		it('should success get token', async () => {
 			const spySession = vi.spyOn(authService, 'createSession');
 
@@ -167,7 +165,7 @@ describe('AuthService', () => {
 			const result = await authService.getUserFromToken({
 				cookies: {
 					delete: vi.fn(),
-					get: vi.fn().mockReturnValue(''),
+					get: vi.fn(),
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
@@ -176,7 +174,7 @@ describe('AuthService', () => {
 			});
 
 			expect(result).toEqual({
-				error: errorMessages['token-expired'],
+				error: errorMessages.forbidden,
 				data: null
 			});
 		});
@@ -193,9 +191,10 @@ describe('AuthService', () => {
 			const result = await authService.getUserFromToken({
 				cookies: {
 					delete: vi.fn(),
-					get: vi.fn().mockReturnValue({
-						[cookiesKey.accessKey]: tokenMock.accessToken,
-						[cookiesKey.refreshKey]: tokenMock.refreshToken
+					get: vi.fn().mockImplementation((value) => {
+						if (value === cookiesKey.accessKey) return '';
+
+						return tokenMock.refreshToken;
 					}),
 					getAll: vi.fn(),
 					serialize: vi.fn(),
