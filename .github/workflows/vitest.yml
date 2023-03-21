@@ -17,5 +17,7 @@ jobs:
         run: pnpm install
       - name: svelte check code
         run: pnpm check
+      - name: lint
+        run: pnpm lint
       - name: unit test
         run: pnpm test:unit
