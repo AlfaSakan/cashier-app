@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let width: string = '24';
-	export let height: string = '24';
+	export let width = '24';
+	export let height = '24';
 
-	let className: string = 'dark:fill-white fill-black';
+	let className = 'dark:fill-white fill-black';
 	export { className as class };
 </script>
 

@@ -1,6 +1,6 @@
 name: Svelte Vitest
 
-on: [push, pull_request]
+on: [push]
 jobs:
   vitest:
     runs-on: ubuntu-latest
