@@ -13,6 +13,8 @@ jobs:
           node-version: 18
       - name: install pnpm
         run: npm install -g pnpm
+      - name: install package
+        run: pnpm install
       - name: svelte check code
         run: pnpm check
       - name: unit test
