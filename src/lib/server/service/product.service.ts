@@ -8,7 +8,7 @@ import type {
 import prisma from '../utils/prisma';
 
 export class ProductService {
-	async createProduct(dto: CreateProductDto) {
+	async createProduct(dto: CreateProductDto & { userId: string }) {
 		const user = await prisma.user.findUnique({ where: { id: dto.userId } });
 		if (user === null) return { product: null, error: errorMessages['user-not-found'] };
 

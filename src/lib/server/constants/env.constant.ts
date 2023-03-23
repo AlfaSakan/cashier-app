@@ -1,4 +1,4 @@
 export const env = {
-	jwtKey: process.env.VITE_JWT_KEY || 'rahasia',
-	salt: process.env.VITE_SALT || ''
+	jwtKey: import.meta.env.VITE_JWT_KEY || '',
+	salt: import.meta.env.VITE_SALT || ''
 } as const;

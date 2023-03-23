@@ -2,7 +2,17 @@
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			animation: {
+				'show-bottom-content': 'bottom-content 0.5s linear forwards'
+			},
+			keyframes: {
+				'bottom-content': {
+					'0%': { opacity: 0 },
+					'100%': { opacity: 1, transform: 'translate(0px, -80px)' }
+				}
+			}
+		}
 	},
-	plugins: [require('daisyui')]
+	plugins: [require('daisyui'), require('@tailwindcss/line-clamp')]
 };

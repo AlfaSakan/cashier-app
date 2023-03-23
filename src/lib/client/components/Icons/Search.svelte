@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let width = '24';
-	export let height = '24';
+	export let width = '20';
+	export let height = '20';
 
 	let className = 'dark:fill-white fill-black';
 	export { className as class };

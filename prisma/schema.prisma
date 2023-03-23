@@ -49,6 +49,7 @@ model Product {
   description String
   price       Int
   amount      Int
+  unit        String @db.VarChar(20)
 
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
