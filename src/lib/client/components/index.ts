@@ -1,6 +1,21 @@
 import TextInput from './atoms/TextInput/TextInput.atom.svelte';
+import TextInputArea from './atoms/TextInputArea/TextInputArea.atom.svelte';
+import TextInputNumber from './atoms/TextInputNumber/TextInputNumber.atom.svelte';
+import TextInputPassword from './atoms/TextInputPassword/TextInputPassword.atom.svelte';
 import Card from './molecules/Card/Card.molecule.svelte';
 import Carousel from './molecules/Carousel/Carousel.molecule.svelte';
-import NavBarAdmin from './organisms/NavBarAdmin/NavBarAdmin.organism.svelte';
+import ListTileProduct from './molecules/ListTileProduct/ListTileProduct.molecule.svelte';
+import BottomNavigation from './organisms/BottomNavigation/BottomNavigation.organism.svelte';
+import HeaderNavigation from './organisms/HeaderNavigation/HeaderNavigation.organism.svelte';
 
-export { TextInput, NavBarAdmin, Card, Carousel };
+export {
+	BottomNavigation,
+	Card,
+	Carousel,
+	HeaderNavigation,
+	ListTileProduct,
+	TextInput,
+	TextInputArea,
+	TextInputNumber,
+	TextInputPassword
+};

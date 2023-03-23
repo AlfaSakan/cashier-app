@@ -2,14 +2,14 @@ import { z } from 'zod';
 import { userId } from './user.schema';
 
 export const productName = z.string().min(3).max(150).trim();
-export const productDescription = z.string().min(3).trim();
-export const productAmount = z.coerce.number().min(0).default(0);
-export const gender = z.string().min(1).trim();
+export const productDescription = z.string().trim();
+
 export const category = z.string().min(1).trim();
-export const genderId = z.number().default(0);
 export const categoryId = z.number().default(0);
-export const price = z.number().min(0).default(0);
-export const amount = z.number().min(0).default(0);
+
+export const unit = z.string().trim().toLowerCase();
+export const price = z.coerce.number().min(0);
+export const amount = z.coerce.number().min(0);
 export const productId = z.string();
 
 export const createProductDto = z.object({
@@ -17,7 +17,7 @@ export const createProductDto = z.object({
 	description: productDescription,
 	price,
 	amount,
-	userId: userId
+	unit
 });
 
 export const updateProductDto = z.object({
