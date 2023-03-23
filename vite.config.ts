@@ -18,7 +18,8 @@ export default defineConfig({
 				'src/**/app.d.ts',
 				'src/**/__mocks__/**/*',
 				'src/**/index.ts',
-				'src/**/types.util.ts'
+				'src/**/types.util.ts',
+				'src/**/event-type.ts'
 			],
 			reporter: ['json', 'text'],
 			all: true,

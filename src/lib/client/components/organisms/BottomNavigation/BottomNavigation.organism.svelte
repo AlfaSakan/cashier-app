@@ -7,12 +7,12 @@
 </script>
 
 <div class="btm-nav">
-	<button>
+	<a type="button" href="/">
 		<Home />
-	</button>
-	<button class="active">
+	</a>
+	<a type="button" class="active" href="/warehouse">
 		<BagShopping />
-	</button>
+	</a>
 	<button>
 		<Chart />
 	</button>
