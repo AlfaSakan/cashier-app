@@ -28,6 +28,7 @@
 			{min}
 			autocomplete="off"
 			on:change
+			on:input
 		/>
 		<slot name="trailing">
 			<div class="hidden" />

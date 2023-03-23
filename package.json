@@ -25,6 +25,7 @@
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-node": "^1.2.1",
 		"@sveltejs/kit": "^1.10.0",
+		"@tailwindcss/line-clamp": "^0.4.2",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/svelte": "^3.2.2",
 		"@types/jsonwebtoken": "^9.0.1",
