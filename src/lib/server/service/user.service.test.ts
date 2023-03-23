@@ -1,6 +1,6 @@
-import { errorMessages } from '$lib/client/constants/error.constant';
 import { userMock } from '$lib/__mocks__/dummy/user.dummy';
 import prismaMock from '$lib/__mocks__/prisma';
+import { errorMessages } from '$lib/client/constants/error.constant';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {} from '../utils/hash.util';
 import { UserService } from './user.service';
@@ -96,6 +96,18 @@ describe('UserService', () => {
 			});
 
 			expect(result.user?.email).toBe(userMock.email);
+		});
+
+		it('should return error email taken', async () => {
+			prismaMock.user.findUnique.mockResolvedValue(userMock);
+
+			const result = await userService.createUser({
+				email: userMock.email,
+				name: userMock.name,
+				password: userMock.hash
+			});
+
+			expect(result).toEqual({ error: errorMessages['email-taken'], user: null });
 		});
 	});
 

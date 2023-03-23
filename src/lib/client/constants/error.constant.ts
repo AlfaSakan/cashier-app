@@ -1,5 +1,6 @@
 export const errorMessages = {
 	'product-not-found': 'Produk tidak ditemukan',
+	'transaction-not-found': 'Transaksi tidak ditemukan',
 	'gender-not-found': 'Jenis Kelamin tidak ditemukan',
 	'category-not-found': 'Kategori tidak ditemukan',
 	'user-not-found': 'User tidak ditemukan',
