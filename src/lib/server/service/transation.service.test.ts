@@ -32,7 +32,8 @@ describe('TransactionService', () => {
 
 			const results = await transactionService.createTransaction({
 				products: [productMock],
-				userId: userId
+				userId: userId,
+				moneyPaid: transactionHistoryMock.moneyPaid
 			});
 
 			expect(results).toEqual({ error: null, transactions: expectData });

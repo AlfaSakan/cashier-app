@@ -10,7 +10,7 @@ import prisma from '../utils/prisma';
 export class TransactionService {
 	async createTransaction(dto: CreateTransactionDto) {
 		const transactionHistory = await prisma.transactionHistory.create({
-			data: { createdAt: generateUnixSecond(), userId: dto.userId }
+			data: { createdAt: generateUnixSecond(), userId: dto.userId, moneyPaid: dto.moneyPaid }
 		});
 
 		await prisma.transactionProduct.createMany({
