@@ -78,6 +78,8 @@ model TransactionHistory {
   id        String @id @default(cuid())
   createdAt Int
 
+  moneyPaid Int
+
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 

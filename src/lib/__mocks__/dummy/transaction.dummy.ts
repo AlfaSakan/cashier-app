@@ -7,6 +7,7 @@ export const transactionProductId = 'transactio-product-id';
 
 export const transactionHistoryMock: TransactionHistory = {
 	createdAt: 0,
+	moneyPaid: 100000,
 	id: transactionHistoryId,
 	userId: userId
 };
