@@ -7,9 +7,9 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=template
+      - POSTGRES_DB=cashier
     networks:
-      - templateapp
+      - cashierapp
   test-db:
     image: postgres:15.0-alpine
     ports:
@@ -17,8 +17,8 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=template
+      - POSTGRES_DB=cashier
     networks:
-      - templateapp
+      - cashierapp
 networks:
-  templateapp:
+  cashierapp:

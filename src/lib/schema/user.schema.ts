@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 export const emailSchema = z.string().email();
+export const userId = z.string();
 
 export interface CreateUserDto {
 	name: string;

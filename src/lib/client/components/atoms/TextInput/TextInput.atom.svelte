@@ -12,18 +12,28 @@
 <div class="form-control w-full">
 	<label for={name} class="label">
 		<span class="label-text font-semibold">{label}</span>
-		<!-- <span class="label-text-alt">Alt label</span> -->
 	</label>
-	<input
-		{type}
-		{placeholder}
-		class="input input-bordered w-full"
-		id={name}
-		{name}
-		{value}
-		{disabled}
-		{min}
-	/>
+	<div class="input input-bordered w-full flex items-center gap-2">
+		<slot name="leading">
+			<div class="hidden" />
+		</slot>
+		<input
+			class="flex-1 flex bg-transparent h-full outline-none"
+			{type}
+			{placeholder}
+			id={name}
+			{name}
+			{value}
+			{disabled}
+			{min}
+			autocomplete="off"
+			on:change
+			on:input
+		/>
+		<slot name="trailing">
+			<div class="hidden" />
+		</slot>
+	</div>
 	<label for={name} class="label">
 		<span class="label-text-alt text-error">{error ? error : ''}</span>
 	</label>

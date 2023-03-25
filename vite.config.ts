@@ -10,7 +10,7 @@ export default defineConfig({
 		reporters: ['verbose'],
 		include: ['src/**/*.{test,spec}.{js,ts}'],
 		coverage: {
-			include: ['src/**/*.ts'],
+			include: ['src/**/*.{ts,svelte}'],
 			exclude: [
 				'src/**/*.constant.ts',
 				'src/**/*.test.ts',
@@ -18,9 +18,11 @@ export default defineConfig({
 				'src/**/app.d.ts',
 				'src/**/__mocks__/**/*',
 				'src/**/index.ts',
-				'src/**/types.util.ts'
+				'src/**/types.util.ts',
+				'src/**/event-type.ts',
+				'src/routes/**/*'
 			],
-			reporter: ['json'],
+			reporter: ['json', 'text'],
 			all: true,
 			lines: 60,
 			functions: 60,
