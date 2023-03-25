@@ -40,7 +40,7 @@
 	};
 </script>
 
-<div class="flex w-full h-screen items-center justify-center px-10 bg-white">
+<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center px-6 bg-white">
 	<form
 		action="?/signIn"
 		method="post"
