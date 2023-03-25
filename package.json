@@ -1,5 +1,5 @@
 {
-	"name": "template-svelte-prisma",
+	"name": "cashier-app",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -19,9 +19,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@paralleldrive/cuid2": "^2.2.0",
 		"@playwright/test": "^1.31.2",
-		"@prisma/client": "^4.11.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-node": "^1.2.1",
 		"@sveltejs/kit": "^1.10.0",
@@ -32,14 +30,12 @@
 		"@typescript-eslint/eslint-plugin": "^5.54.1",
 		"@typescript-eslint/parser": "^5.54.1",
 		"@vitest/coverage-c8": "^0.29.2",
-		"argon2": "^0.30.3",
 		"autoprefixer": "^10.4.13",
 		"daisyui": "^2.51.3",
 		"eslint": "^8.35.0",
 		"eslint-config-prettier": "^8.7.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"jsdom": "^21.1.0",
-		"jsonwebtoken": "^9.0.0",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.4",
 		"prettier-plugin-svelte": "^2.9.0",
@@ -52,7 +48,14 @@
 		"typescript": "^4.9.5",
 		"vite": "^4.1.4",
 		"vitest": "^0.29.2",
-		"vitest-mock-extended": "^1.0.10",
+		"vitest-mock-extended": "^1.0.10"
+	},
+	"dependencies": {
+		"@paralleldrive/cuid2": "^2.2.0",
+		"@prisma/client": "^4.11.0",
+		"argon2": "^0.30.3",
+		"dotenv": "^16.0.3",
+		"jsonwebtoken": "^9.0.0",
 		"zod": "^3.21.4"
 	},
 	"type": "module"

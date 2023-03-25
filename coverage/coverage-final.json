@@ -1,6 +1,6 @@
 {
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BagShopping.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BagShopping.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BagShopping.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BagShopping.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -37,8 +37,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BellNotif.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BellNotif.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BellNotif.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/BellNotif.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -75,8 +75,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Chart.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Chart.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Chart.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Chart.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -135,8 +135,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronDown.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronDown.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronDown.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronDown.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -173,8 +173,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronRight.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronRight.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronRight.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronRight.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -211,8 +211,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronUp.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronUp.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronUp.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/ChevronUp.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -249,8 +249,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Close.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Close.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Close.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Close.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -287,8 +287,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOff.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOff.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOff.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOff.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -325,8 +325,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOn.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOn.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOn.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/EyeOn.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -363,8 +363,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Hamburger.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Hamburger.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Hamburger.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Hamburger.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -401,8 +401,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Home.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Home.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Home.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Home.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -461,8 +461,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Minus.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Minus.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Minus.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Minus.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -503,8 +503,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Person.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Person.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Person.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Person.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -541,8 +541,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Plus.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Plus.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Plus.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Plus.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -597,8 +597,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Search.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Search.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Search.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/Icons/Search.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -635,8 +635,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInput/TextInput.atom.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInput/TextInput.atom.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInput/TextInput.atom.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInput/TextInput.atom.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -744,8 +744,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputArea/TextInputArea.atom.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputArea/TextInputArea.atom.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputArea/TextInputArea.atom.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputArea/TextInputArea.atom.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -806,8 +806,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputNumber/TextInputNumber.atom.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputNumber/TextInputNumber.atom.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputNumber/TextInputNumber.atom.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputNumber/TextInputNumber.atom.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -844,8 +844,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputPassword/TextInputPassword.atom.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputPassword/TextInputPassword.atom.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputPassword/TextInputPassword.atom.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/atoms/TextInputPassword/TextInputPassword.atom.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -952,8 +952,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Card/Card.molecule.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Card/Card.molecule.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Card/Card.molecule.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Card/Card.molecule.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -1018,8 +1018,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Carousel/Carousel.molecule.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Carousel/Carousel.molecule.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Carousel/Carousel.molecule.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/Carousel/Carousel.molecule.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -1102,8 +1102,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/ListTileProduct/ListTileProduct.molecule.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/ListTileProduct/ListTileProduct.molecule.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/ListTileProduct/ListTileProduct.molecule.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/molecules/ListTileProduct/ListTileProduct.molecule.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -1256,32 +1256,33 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/BottomNavigation/BottomNavigation.organism.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/BottomNavigation/BottomNavigation.organism.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/BottomNavigation/BottomNavigation.organism.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/BottomNavigation/BottomNavigation.organism.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
 			"1": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 58 } },
 			"2": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 46 } },
-			"3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 0 } },
-			"4": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 44 } },
-			"5": { "start": { "line": 6, "column": 0 }, "end": { "line": 6, "column": 48 } },
-			"6": { "start": { "line": 7, "column": 0 }, "end": { "line": 7, "column": 9 } },
-			"7": { "start": { "line": 8, "column": 0 }, "end": { "line": 8, "column": 0 } },
-			"8": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 21 } },
-			"9": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 27 } },
-			"10": { "start": { "line": 11, "column": 0 }, "end": { "line": 11, "column": 10 } },
-			"11": { "start": { "line": 12, "column": 0 }, "end": { "line": 12, "column": 5 } },
-			"12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 51 } },
-			"13": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 17 } },
-			"14": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 5 } },
-			"15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 9 } },
-			"16": { "start": { "line": 17, "column": 0 }, "end": { "line": 17, "column": 11 } },
-			"17": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 10 } },
-			"18": { "start": { "line": 19, "column": 0 }, "end": { "line": 19, "column": 9 } },
-			"19": { "start": { "line": 20, "column": 0 }, "end": { "line": 20, "column": 12 } },
-			"20": { "start": { "line": 21, "column": 0 }, "end": { "line": 21, "column": 10 } },
-			"21": { "start": { "line": 22, "column": 0 }, "end": { "line": 22, "column": 6 } }
+			"3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 44 } },
+			"4": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 48 } },
+			"5": { "start": { "line": 6, "column": 0 }, "end": { "line": 6, "column": 0 } },
+			"6": { "start": { "line": 7, "column": 0 }, "end": { "line": 7, "column": 30 } },
+			"7": { "start": { "line": 8, "column": 0 }, "end": { "line": 8, "column": 9 } },
+			"8": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 0 } },
+			"9": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 21 } },
+			"10": { "start": { "line": 11, "column": 0 }, "end": { "line": 11, "column": 71 } },
+			"11": { "start": { "line": 12, "column": 0 }, "end": { "line": 12, "column": 10 } },
+			"12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 5 } },
+			"13": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 89 } },
+			"14": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 17 } },
+			"15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 5 } },
+			"16": { "start": { "line": 17, "column": 0 }, "end": { "line": 17, "column": 9 } },
+			"17": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 11 } },
+			"18": { "start": { "line": 19, "column": 0 }, "end": { "line": 19, "column": 10 } },
+			"19": { "start": { "line": 20, "column": 0 }, "end": { "line": 20, "column": 9 } },
+			"20": { "start": { "line": 21, "column": 0 }, "end": { "line": 21, "column": 12 } },
+			"21": { "start": { "line": 22, "column": 0 }, "end": { "line": 22, "column": 10 } },
+			"22": { "start": { "line": 23, "column": 0 }, "end": { "line": 23, "column": 6 } }
 		},
 		"s": {
 			"0": 1,
@@ -1305,15 +1306,16 @@
 			"18": 1,
 			"19": 1,
 			"20": 1,
-			"21": 1
+			"21": 1,
+			"22": 1
 		},
 		"branchMap": {},
 		"b": {},
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/HeaderNavigation/HeaderNavigation.organism.svelte": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/HeaderNavigation/HeaderNavigation.organism.svelte",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/HeaderNavigation/HeaderNavigation.organism.svelte": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/components/organisms/HeaderNavigation/HeaderNavigation.organism.svelte",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 18 } },
@@ -1378,8 +1380,8 @@
 		"fnMap": {},
 		"f": {}
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/store/product.store.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/store/product.store.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/store/product.store.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/store/product.store.ts",
 		"all": true,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 46 } },
@@ -1407,8 +1409,8 @@
 		},
 		"f": { "0": 0 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/date.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/date.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/date.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/date.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 38 } },
@@ -1447,8 +1449,8 @@
 		},
 		"f": { "0": 11, "1": 11 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/image.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/image.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/image.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/image.util.ts",
 		"all": true,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 40 } },
@@ -1507,8 +1509,8 @@
 		},
 		"f": { "0": 0 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/interval.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/interval.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/interval.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/interval.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 35 } },
@@ -1559,8 +1561,8 @@
 		},
 		"f": { "0": 1, "1": 2 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/number.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/number.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/number.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/number.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 52 } },
@@ -1669,8 +1671,8 @@
 		},
 		"f": { "0": 3, "1": 3, "2": 2, "3": 2 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/product.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/product.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/product.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/product.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 46 } },
@@ -1752,8 +1754,8 @@
 		},
 		"f": { "0": 1, "1": 1, "2": 1, "3": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/string.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/string.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/string.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/string.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 48 } },
@@ -1926,8 +1928,8 @@
 		},
 		"f": { "0": 2, "1": 2, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/validate-data.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/client/utils/validate-data.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/validate-data.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/client/utils/validate-data.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 47 } },
@@ -2032,8 +2034,8 @@
 		},
 		"f": { "0": 3, "1": 3 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/auth.service.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/auth.service.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/auth.service.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/auth.service.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 68 } },
@@ -2357,8 +2359,8 @@
 		},
 		"f": { "0": 1, "1": 1, "2": 2, "3": 5, "4": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/product.service.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/product.service.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/product.service.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/product.service.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 69 } },
@@ -2657,8 +2659,8 @@
 		},
 		"f": { "0": 2, "1": 2, "2": 2, "3": 2, "4": 1, "5": 4, "6": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/transation.service.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/transation.service.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/transation.service.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/transation.service.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 69 } },
@@ -2673,7 +2675,7 @@
 			"9": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 33 } },
 			"10": { "start": { "line": 11, "column": 0 }, "end": { "line": 11, "column": 53 } },
 			"11": { "start": { "line": 12, "column": 0 }, "end": { "line": 12, "column": 69 } },
-			"12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 64 } },
+			"12": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 90 } },
 			"13": { "start": { "line": 14, "column": 0 }, "end": { "line": 14, "column": 5 } },
 			"14": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 0 } },
 			"15": { "start": { "line": 16, "column": 0 }, "end": { "line": 16, "column": 46 } },
@@ -2901,8 +2903,8 @@
 		},
 		"f": { "0": 1, "1": 2, "2": 2, "3": 3, "4": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/user.service.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/service/user.service.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/user.service.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/service/user.service.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 69 } },
@@ -3219,8 +3221,8 @@
 		},
 		"f": { "0": 1, "1": 3, "2": 2, "3": 2, "4": 6, "5": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/hash.util.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/hash.util.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/hash.util.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/hash.util.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 57 } },
@@ -3305,8 +3307,8 @@
 		},
 		"f": { "0": 1, "1": 1, "2": 1, "3": 1 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/jwt-token.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/jwt-token.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/jwt-token.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/jwt-token.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 69 } },
@@ -3487,8 +3489,8 @@
 		},
 		"f": { "0": 4, "1": 2, "2": 2, "3": 2, "4": 2, "5": 2, "6": 2 }
 	},
-	"/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/prisma.ts": {
-		"path": "/Users/ahmadalfasakan/Documents/svelte/cashier-app/src/lib/server/utils/prisma.ts",
+	"/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/prisma.ts": {
+		"path": "/Users/ahmad.sakan/Documents/svelte/cashier-app/src/lib/server/utils/prisma.ts",
 		"all": false,
 		"statementMap": {
 			"0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 46 } },

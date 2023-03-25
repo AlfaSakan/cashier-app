@@ -2,6 +2,7 @@ import type { Product } from '@prisma/client';
 
 export interface CreateTransactionDto {
 	userId: string;
+	moneyPaid: number;
 	products: Product[];
 }
 
