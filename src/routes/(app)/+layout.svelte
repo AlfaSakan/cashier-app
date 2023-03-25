@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { BottomNavigation, HeaderNavigation } from '$lib/client/components';
 	import { Toaster } from 'svelte-french-toast';
 </script>
@@ -14,7 +15,7 @@
 		<Toaster />
 	</div>
 
-	<BottomNavigation />
+	<BottomNavigation currentPage={$page.url.pathname} />
 	<div class="drawer-side">
 		<label for="my-drawer-2" class="drawer-overlay" />
 		<ul class="menu p-4 w-80 bg-base-100 text-base-content">
