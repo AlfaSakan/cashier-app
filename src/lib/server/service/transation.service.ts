@@ -5,9 +5,13 @@ import type {
 	DeleteTransactionDto,
 	PermissionAccessTransaction
 } from '$lib/schema/transaction.schema';
+import type { Product } from '@prisma/client';
 import prisma from '../utils/prisma';
+import type { ProductService } from './product.service';
 
 export class TransactionService {
+	constructor(private productService: ProductService) {}
+
 	async createTransaction(dto: CreateTransactionDto) {
 		const transactionHistory = await prisma.transactionHistory.create({
 			data: { createdAt: generateUnixSecond(), userId: dto.userId, moneyPaid: dto.moneyPaid }
@@ -20,6 +24,20 @@ export class TransactionService {
 				transactionHistoryId: transactionHistory.id
 			}))
 		});
+
+		const promises: Promise<{ error: string | null; product: Product | null }>[] = [];
+
+		dto.products.forEach((product) => {
+			const updatedProduct = this.productService.calculateAmountProduct({
+				subtract: product.amount,
+				id: product.id,
+				userId: dto.userId
+			});
+
+			promises.push(updatedProduct);
+		});
+
+		await Promise.allSettled(promises);
 
 		const result = await this.findTransactionById(transactionHistory.id);
 

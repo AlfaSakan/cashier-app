@@ -58,4 +58,15 @@ export class ProductService {
 
 		return { product, error: null };
 	}
+
+	async calculateAmountProduct(dto: GeneralProductDto & { subtract: number }) {
+		const { error, product } = await this.validatePermission(dto);
+		if (error) return { error, product };
+
+		const result = product.amount - dto.subtract;
+		if (result < 0) return { product: null, error: errorMessages['product-not-enough'] };
+
+		const pro = await prisma.product.update({ where: { id: dto.id }, data: { amount: result } });
+		return { product: pro, error: null };
+	}
 }

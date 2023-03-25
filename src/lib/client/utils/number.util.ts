@@ -2,7 +2,9 @@ export function formatNumberToRupiah(numb: number) {
 	return new Intl.NumberFormat('id-ID', {
 		currency: 'IDR',
 		style: 'currency'
-	}).format(numb);
+	})
+		.format(numb)
+		.replace(',00', '');
 }
 
 export function bigIntHandling<T>(obj: T): T {

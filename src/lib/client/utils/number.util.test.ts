@@ -5,7 +5,7 @@ describe('formatNumberToRupiah', () => {
 	it('should return Rp 1.000,00', () => {
 		const value = formatNumberToRupiah(1000);
 
-		expect(value).toBe('Rp\u{00A0}1.000,00');
+		expect(value).toBe('Rp\u{00A0}1.000');
 	});
 });
 

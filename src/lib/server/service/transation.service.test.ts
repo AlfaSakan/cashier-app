@@ -8,6 +8,7 @@ import prismaMock from '$lib/__mocks__/prisma';
 import { errorMessages } from '$lib/client/constants/error.constant';
 import type { TransactionHistory, TransactionProduct } from '@prisma/client';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { ProductService } from './product.service';
 import { TransactionService } from './transation.service';
 
 afterEach(() => {
@@ -15,7 +16,7 @@ afterEach(() => {
 });
 
 describe('TransactionService', () => {
-	const transactionService = new TransactionService();
+	const transactionService = new TransactionService(new ProductService());
 
 	const expectData: TransactionHistory & { TransactionProduct: TransactionProduct[] } = {
 		...transactionHistoryMock,
