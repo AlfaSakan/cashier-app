@@ -6,4 +6,4 @@ import { UserService } from './user.service';
 export const userService = new UserService();
 export const authService = new AuthService(userService);
 export const productService = new ProductService();
-export const transactionService = new TransactionService();
+export const transactionService = new TransactionService(productService);

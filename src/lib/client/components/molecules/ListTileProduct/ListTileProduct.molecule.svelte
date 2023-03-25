@@ -6,12 +6,15 @@
 	import Minus from '../../Icons/Minus.svelte';
 	import Person from '../../Icons/Person.svelte';
 	import Plus from '../../Icons/Plus.svelte';
+	import Setting from '../../Icons/Setting.svelte';
 	import type { ListTileDispatch } from './event-type';
 
 	const dispatch = createEventDispatcher<ListTileDispatch>();
 
 	export let product: Product;
 	export let stockInCart: number | undefined;
+	export let href = '';
+	export let isFocus = false;
 
 	function handleAddAmount() {
 		dispatch('add', {
@@ -33,6 +36,29 @@
 			productId: product.id
 		});
 	}
+
+	function handleInput(event: Event) {
+		const target = event.target as HTMLSelectElement;
+		const input = Number(target.value);
+
+		const inputAmount = input > product.amount ? product.amount : input;
+
+		dispatch('input', {
+			productId: product.id,
+			inputAmount
+		});
+	}
+
+	function handleFocus() {
+		isFocus = true;
+	}
+
+	function handleBlur() {
+		isFocus = false;
+		dispatch('blur', {
+			productId: product.id
+		});
+	}
 </script>
 
 <button
@@ -47,9 +73,14 @@
 		<p>{formatNumberToRupiah(product.price)}</p>
 		<p class="text-sm text-zinc-500">{product.amount} {product.unit}</p>
 	</div>
-	{#if stockInCart}
-		<div class="ml-auto flex items-center gap-1">
-			<TextInputNumber value={stockInCart.toString()} />
+	{#if stockInCart || isFocus}
+		<button class="ml-auto flex items-center gap-1" on:click|stopPropagation>
+			<TextInputNumber
+				value={(stockInCart || 0).toString()}
+				on:input={handleInput}
+				on:blur={handleBlur}
+				on:focus={handleFocus}
+			/>
 			<div class="flex flex-col items-center justify-between gap-1">
 				<button
 					type="button"
@@ -66,6 +97,10 @@
 					<Minus />
 				</button>
 			</div>
-		</div>
+		</button>
+	{:else}
+		<a {href} class="mb-auto">
+			<Setting />
+		</a>
 	{/if}
 </button>

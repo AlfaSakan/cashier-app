@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { ListTileProduct, TextInput } from '$lib/client/components';
-	import Person from '$lib/client/components/Icons/Person.svelte';
 	import Plus from '$lib/client/components/Icons/Plus.svelte';
-	import type { ListTileEvent } from '$lib/client/components/molecules/ListTileProduct/event-type';
+	import BottomTransaction from '$lib/client/components/molecules/BottomTransaction/BottomTransaction.molecule.svelte';
+	import type {
+		ListTileEvent,
+		ListTileInputEvent
+	} from '$lib/client/components/molecules/ListTileProduct/event-type';
 	import { selectedProduct } from '$lib/client/store/product.store';
 	import { countProductsAmount, countTotalProductsPrice } from '$lib/client/utils/product.util';
 	import type { PageServerData } from './$types';
@@ -22,13 +25,22 @@
 		product.name.toLowerCase().includes(search.toLowerCase())
 	);
 
-	function handleAmount(event: CustomEvent<ListTileEvent>) {
-		if (event.detail.selectedAmount === 0) {
-			const newData = [...$selectedProduct];
-			const foundIndex = newData.findIndex((pro) => pro.id === event.detail.productId);
+	function validateAmount(input: number, inputId: string) {
+		let isValid = true;
+		filteredProducts.forEach((pro) => {
+			if (pro.id === inputId && input > pro.amount) {
+				isValid = false;
+			}
+		});
 
-			newData.splice(foundIndex, 1);
-			$selectedProduct = newData;
+		return isValid;
+	}
+
+	function handleAmount(event: CustomEvent<ListTileEvent>) {
+		if (!validateAmount(event.detail.selectedAmount, event.detail.productId)) return;
+
+		if (event.detail.selectedAmount === 0) {
+			$selectedProduct = $selectedProduct.filter((pro) => pro.id !== event.detail.productId);
 			return;
 		}
 
@@ -45,17 +57,38 @@
 		const product = data.products.find((pro) => pro.id === event.detail.productId);
 		if (!product) return;
 
-		const isExist = $selectedProduct.find((pro) => pro.id === event.detail.productId);
-		if (!isExist) {
+		const foundProduct = $selectedProduct.find((pro) => pro.id === event.detail.productId);
+		if (!foundProduct) {
 			$selectedProduct = [...$selectedProduct, { ...product, amount: 1 }];
 			return;
 		}
+
+		let isNotValid = false;
+		filteredProducts.forEach((pro) => {
+			if (pro.id === foundProduct.id && foundProduct.amount + 1 > pro.amount) {
+				isNotValid = true;
+			}
+		});
+		if (isNotValid) return;
 
 		$selectedProduct = $selectedProduct.map((pro) => {
 			if (pro.id !== event.detail.productId) return pro;
 
 			return { ...pro, amount: pro.amount + 1 };
 		});
+	}
+
+	function handleInputAmount(event: CustomEvent<ListTileInputEvent>) {
+		$selectedProduct = $selectedProduct.map((pro) => {
+			if (pro.id === event.detail.productId) {
+				return { ...pro, amount: event.detail.inputAmount };
+			}
+			return pro;
+		});
+	}
+
+	function removeZeroAmount() {
+		$selectedProduct = $selectedProduct.filter((pro) => pro.amount !== 0);
 	}
 </script>
 
@@ -79,21 +112,17 @@
 			{product}
 			on:select={handleSelectCard}
 			stockInCart={$selectedProduct.find((pro) => pro.id === product.id)?.amount}
+			href="edit-product/{product.id}"
+			on:input={handleInputAmount}
+			on:blur={removeZeroAmount}
 		/>
 	{/each}
 </div>
 
 {#if $selectedProduct.length > 0}
-	<div class="absolute bottom-0 left-0 w-full px-4 animate-show-bottom-content">
-		<button class="bg-slate-100 rounded-lg w-full flex py-4 px-3 items-center gap-2">
-			<div class="rounded-full bg-slate-300 w-12 h-12 flex items-center justify-center">
-				<Person />
-			</div>
-			<div class="flex flex-col flex-1 items-start">
-				<p class="font-semibold line-clamp-1">Total produk {$selectedProduct.length}</p>
-				<p>Total barang {countProductsAmount($selectedProduct)}</p>
-				<p>{countTotalProductsPrice($selectedProduct)}</p>
-			</div>
-		</button>
-	</div>
+	<BottomTransaction
+		totalAmount={countProductsAmount($selectedProduct)}
+		totalPrice={countTotalProductsPrice($selectedProduct)}
+		totalProduct={$selectedProduct.length}
+	/>
 {/if}
