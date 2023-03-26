@@ -29,7 +29,7 @@ describe('TransactionService', () => {
 			prismaMock.transactionProduct.createMany.mockResolvedValueOnce({ count: 1 });
 
 			const spyOn = vi.spyOn(transactionService, 'findTransactionById');
-			spyOn.mockResolvedValueOnce({ error: null, transactions: expectData });
+			spyOn.mockResolvedValueOnce({ error: null, transaction: expectData });
 
 			const results = await transactionService.createTransaction({
 				products: [productMock],
@@ -37,40 +37,40 @@ describe('TransactionService', () => {
 				moneyPaid: transactionHistoryMock.moneyPaid
 			});
 
-			expect(results).toEqual({ error: null, transactions: expectData });
+			expect(results).toEqual({ error: null, transaction: expectData });
 		});
 	});
 
 	describe('checkPermission', () => {
 		it('should be able to check permission for transaction', async () => {
 			const spyOn = vi.spyOn(transactionService, 'findTransactionById');
-			spyOn.mockResolvedValueOnce({ error: null, transactions: expectData });
+			spyOn.mockResolvedValueOnce({ error: null, transaction: expectData });
 
 			const results = await transactionService.checkPermission({
 				userId: userId,
 				transactionId: transactionHistoryMock.id
 			});
 
-			expect(results).toEqual({ error: null, transactions: expectData });
+			expect(results).toEqual({ error: null, transaction: expectData });
 		});
 
 		it('should return error forbidden message', async () => {
 			const spyOn = vi.spyOn(transactionService, 'findTransactionById');
-			spyOn.mockResolvedValueOnce({ error: null, transactions: expectData });
+			spyOn.mockResolvedValueOnce({ error: null, transaction: expectData });
 
 			const results = await transactionService.checkPermission({
 				userId: 'wrong-id',
 				transactionId: transactionHistoryMock.id
 			});
 
-			expect(results).toEqual({ error: errorMessages.forbidden, transactions: null });
+			expect(results).toEqual({ error: errorMessages.forbidden, transaction: null });
 		});
 
 		it('should return error transaction not foun', async () => {
 			const spyOn = vi.spyOn(transactionService, 'findTransactionById');
 			spyOn.mockResolvedValueOnce({
 				error: errorMessages['transaction-not-found'],
-				transactions: null
+				transaction: null
 			});
 
 			const results = await transactionService.checkPermission({
@@ -80,7 +80,7 @@ describe('TransactionService', () => {
 
 			expect(results).toEqual({
 				error: errorMessages['transaction-not-found'],
-				transactions: null
+				transaction: null
 			});
 		});
 	});
@@ -90,7 +90,7 @@ describe('TransactionService', () => {
 			prismaMock.transactionHistory.findUnique.mockResolvedValueOnce(expectData);
 			const results = await transactionService.findTransactionById(transactionHistoryMock.id);
 
-			expect(results).toEqual({ error: null, transactions: expectData });
+			expect(results).toEqual({ error: null, transaction: expectData });
 		});
 
 		it('should be return error', async () => {
@@ -99,7 +99,7 @@ describe('TransactionService', () => {
 
 			expect(results).toEqual({
 				error: errorMessages['transaction-not-found'],
-				transactions: null
+				transaction: null
 			});
 		});
 	});
@@ -107,7 +107,7 @@ describe('TransactionService', () => {
 	describe('deleteTransaction', () => {
 		it('should be able to find transaction history', async () => {
 			const spyOn = vi.spyOn(transactionService, 'checkPermission');
-			spyOn.mockResolvedValueOnce({ error: null, transactions: expectData });
+			spyOn.mockResolvedValueOnce({ error: null, transaction: expectData });
 
 			prismaMock.transactionHistory.delete.mockResolvedValueOnce(transactionHistoryMock);
 
@@ -121,7 +121,7 @@ describe('TransactionService', () => {
 
 		it('should return error', async () => {
 			const spyOn = vi.spyOn(transactionService, 'checkPermission');
-			spyOn.mockResolvedValueOnce({ error: errorMessages.forbidden, transactions: null });
+			spyOn.mockResolvedValueOnce({ error: errorMessages.forbidden, transaction: null });
 
 			const results = await transactionService.deleteTransaction({
 				transactionId: transactionHistoryMock.id,

@@ -61,6 +61,7 @@
 			placeholder="Password"
 			type="password"
 		/>
+		<a href="/register" class="text-primary font-semibold">Daftar</a>
 		<button class="btn btn-primary w-full">Masuk</button>
 	</form>
 </div>

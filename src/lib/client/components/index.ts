@@ -6,7 +6,9 @@ import BottomTransaction from './molecules/BottomTransaction/BottomTransaction.m
 import Card from './molecules/Card/Card.molecule.svelte';
 import Carousel from './molecules/Carousel/Carousel.molecule.svelte';
 import ListTileProduct from './molecules/ListTileProduct/ListTileProduct.molecule.svelte';
+import ListTileTransaction from './molecules/ListTileTransaction/ListTileTransaction.svelte';
 import BottomNavigation from './organisms/BottomNavigation/BottomNavigation.organism.svelte';
+import ChartArea from './organisms/ChartArea/ChartArea.organism.svelte';
 import HeaderNavigation from './organisms/HeaderNavigation/HeaderNavigation.organism.svelte';
 
 export {
@@ -14,8 +16,10 @@ export {
 	BottomTransaction,
 	Card,
 	Carousel,
+	ChartArea,
 	HeaderNavigation,
 	ListTileProduct,
+	ListTileTransaction,
 	TextInput,
 	TextInputArea,
 	TextInputNumber,

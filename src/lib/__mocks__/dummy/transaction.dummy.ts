@@ -16,5 +16,6 @@ export const transactionProductMock: TransactionProduct = {
 	id: transactionProductId,
 	productId: productMock.id,
 	productSold: 10,
-	transactionHistoryId
+	transactionHistoryId,
+	currentPrice: 10000
 };

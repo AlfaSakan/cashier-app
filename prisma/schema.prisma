@@ -63,7 +63,8 @@ model Product {
 model TransactionProduct {
   id String @id @default(cuid())
 
-  productSold Int
+  productSold  Int
+  currentPrice Int
 
   transactionHistoryId String
   transactionHistory   TransactionHistory @relation(fields: [transactionHistoryId], references: [id], onDelete: Cascade)
