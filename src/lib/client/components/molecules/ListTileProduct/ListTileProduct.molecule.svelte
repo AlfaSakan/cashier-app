@@ -99,7 +99,7 @@
 			</div>
 		</button>
 	{:else}
-		<a {href} class="mb-auto">
+		<a {href} class="mb-auto" on:click|stopPropagation>
 			<Setting />
 		</a>
 	{/if}

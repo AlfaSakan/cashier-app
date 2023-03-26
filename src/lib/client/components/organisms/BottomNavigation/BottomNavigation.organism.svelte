@@ -14,9 +14,13 @@
 	<a type="button" class={currentPage === '/warehouse' ? 'active' : ''} href="/warehouse">
 		<BagShopping />
 	</a>
-	<button>
+	<a
+		type="button"
+		class={currentPage === '/history-transaction' ? 'active' : ''}
+		href="/history-transaction"
+	>
 		<Chart />
-	</button>
+	</a>
 	<button>
 		<Person />
 	</button>
