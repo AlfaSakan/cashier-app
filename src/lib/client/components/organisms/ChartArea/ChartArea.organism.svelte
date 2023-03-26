@@ -2,9 +2,8 @@
 	import { generateTicks } from '$lib/client/utils/number.util';
 	import type { ChartType } from '$lib/client/utils/types.util';
 	import { scaleLinear } from 'd3-scale';
-	import { dummies } from './data';
 
-	export let data: ChartType[] = dummies;
+	export let data: ChartType[];
 
 	const { xTicks, yTicks } = generateTicks(data);
 	const padding = { top: 20, right: 15, bottom: 20, left: 25 };

@@ -9,7 +9,7 @@ import { errorMessages } from '$lib/client/constants/error.constant';
 import type { TransactionHistory, TransactionProduct } from '@prisma/client';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ProductService } from './product.service';
-import { TransactionService } from './transation.service';
+import { TransactionService } from './transaction.service';
 
 afterEach(() => {
 	vi.clearAllMocks();
@@ -129,6 +129,16 @@ describe('TransactionService', () => {
 			});
 
 			expect(results).toEqual({ error: errorMessages.forbidden, ok: false });
+		});
+	});
+
+	describe('findListTransactions', () => {
+		it('should be able to return list transactions by user id', async () => {
+			prismaMock.transactionHistory.findMany.mockResolvedValueOnce([transactionHistoryMock]);
+
+			const result = await transactionService.findListTransactions(userId);
+
+			expect(result).toEqual({ transactions: [transactionHistoryMock], error: null });
 		});
 	});
 });

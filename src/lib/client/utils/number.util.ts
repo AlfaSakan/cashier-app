@@ -20,7 +20,7 @@ export function generateTicks(data: ChartType[]) {
 	const maxY = Math.max.apply(null, y);
 	const delta = Math.round(maxY / 10);
 
-	const yTicks = [...Array(10)].map((_, index) => index * delta);
+	const yTicks = [...Array(11)].map((_, index) => index * delta);
 	const xTicks = data.map((d) => d.x);
 
 	return { yTicks, xTicks };
