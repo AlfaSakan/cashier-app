@@ -11,7 +11,7 @@
 	<a type="button" class={currentPage === '/' ? 'active' : ''} href="/">
 		<Home />
 	</a>
-	<a type="button" class={currentPage === '/warehouse' ? 'active' : ''} href="/warehouse">
+	<a type="button" class={currentPage === '/store' ? 'active' : ''} href="/store">
 		<BagShopping />
 	</a>
 	<a

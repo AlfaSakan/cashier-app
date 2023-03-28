@@ -10,7 +10,7 @@
 {#if transactions.length > 0}
 	<div class="flex flex-col gap-4">
 		{#each transactions as transaction (transaction.id)}
-			<ListTileTransaction {transaction} />
+			<ListTileTransaction href="/transaction/{transaction.id}" {transaction} />
 		{/each}
 	</div>
 {/if}

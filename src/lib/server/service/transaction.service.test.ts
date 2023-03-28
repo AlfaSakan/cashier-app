@@ -6,7 +6,7 @@ import {
 import { userId } from '$lib/__mocks__/dummy/user.dummy';
 import prismaMock from '$lib/__mocks__/prisma';
 import { errorMessages } from '$lib/client/constants/error.constant';
-import type { TransactionHistory, TransactionProduct } from '@prisma/client';
+import type { Product, TransactionHistory, TransactionProduct } from '@prisma/client';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { ProductService } from './product.service';
 import { TransactionService } from './transaction.service';
@@ -18,9 +18,11 @@ afterEach(() => {
 describe('TransactionService', () => {
 	const transactionService = new TransactionService(new ProductService());
 
-	const expectData: TransactionHistory & { TransactionProduct: TransactionProduct[] } = {
+	const expectData: TransactionHistory & {
+		TransactionProduct: (TransactionProduct & { product: Product })[];
+	} = {
 		...transactionHistoryMock,
-		TransactionProduct: [transactionProductMock]
+		TransactionProduct: [{ ...transactionProductMock, product: productMock }]
 	};
 
 	describe('createTransaction', () => {

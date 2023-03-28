@@ -19,6 +19,7 @@ specifiers:
   autoprefixer: ^10.4.13
   d3-scale: ^4.0.2
   daisyui: ^2.51.3
+  date-fns: ^2.29.3
   dotenv: ^16.0.3
   eslint: ^8.35.0
   eslint-config-prettier: ^8.7.0
@@ -45,6 +46,7 @@ dependencies:
   '@prisma/client': 4.11.0_prisma@4.11.0
   argon2: 0.30.3
   d3-scale: 4.0.2
+  date-fns: 2.29.3
   dotenv: 16.0.3
   jsonwebtoken: 9.0.0
   zod: 3.21.4
@@ -1518,6 +1520,11 @@ packages:
       whatwg-mimetype: 3.0.0
       whatwg-url: 12.0.1
     dev: true
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /debug/4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}

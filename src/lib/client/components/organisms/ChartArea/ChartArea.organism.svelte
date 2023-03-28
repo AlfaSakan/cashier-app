@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { format } from '$lib/client/utils/date.util';
 	import { generateTicks } from '$lib/client/utils/number.util';
 	import type { ChartType } from '$lib/client/utils/types.util';
 	import { scaleLinear } from 'd3-scale';
@@ -25,7 +26,7 @@
 	$: area = `${path}L${xScale(maxX)},${yScale(0)}L${xScale(minX)},${yScale(0)}Z`;
 </script>
 
-<h2 class="w-full max-w-lg mx-auto">Arctic sea ice minimum</h2>
+<h2 class="w-full max-w-lg mx-auto">Omset Harian</h2>
 
 <div class="w-full max-w-lg mx-auto" bind:clientWidth={width} bind:clientHeight={height}>
 	<svg class="relative w-full h-[200px] overflow-visible">
@@ -36,8 +37,14 @@
 					class="text-sm font-extralight tick-{tick}"
 					transform="translate(0, {yScale(tick) - padding.bottom})"
 				>
-					<line x2="100%" stroke-dasharray={index === 0 ? 0 : 2} class="stroke-gray-900" />
-					<text y="-4" class="fill-gray-800 text-xs font-medium" text-anchor="start">{tick}rb</text>
+					<line
+						x2="100%"
+						stroke-dasharray={index === 0 ? 0 : 2}
+						class="stroke-gray-900 dark:stroke-slate-200"
+					/>
+					<text y="-4" class="fill-gray-800 text-xs font-medium dark:fill-white" text-anchor="start"
+						>{tick}rb</text
+					>
 				</g>
 			{/each}
 		</g>
@@ -55,10 +62,10 @@
 						x1="0"
 						x2="0"
 						stroke-dasharray={index === 0 ? 0 : 2}
-						class="stroke-gray-900"
+						class="stroke-gray-900 dark:stroke-slate-200"
 					/>
-					<text y="-2" class="fill-gray-800" text-anchor="middle"
-						>{new Date(tick * 1000).getDate() + ' Januari'}</text
+					<text y="-2" class="fill-gray-800 dark:fill-white" text-anchor="middle"
+						>{format(tick, 'dd MMM')}</text
 					>
 				</g>
 			{/each}
@@ -74,12 +81,6 @@
 		/>
 	</svg>
 </div>
-
-<p class="w-full max-w-lg mx-auto">
-	Average September extent. Source: <a href="https://climate.nasa.gov/vital-signs/arctic-sea-ice/">
-		NSIDC/NASA
-	</a>
-</p>
 
 <style>
 	.path-area {

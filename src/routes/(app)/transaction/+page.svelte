@@ -3,6 +3,7 @@
 	import { TextInputNumber } from '$lib/client/components';
 	import { selectedProduct } from '$lib/client/store/product.store';
 	import { formatNumberToRupiah } from '$lib/client/utils/number.util';
+	import { toast } from 'svelte-french-toast';
 	import type { PageServerData } from './$types';
 
 	export let data: PageServerData;
@@ -27,6 +28,7 @@
 		return ({ result, update }) => {
 			switch (result.type) {
 				case 'redirect':
+					toast.success('Transaksi berhasil');
 					$selectedProduct = [];
 					update();
 					break;

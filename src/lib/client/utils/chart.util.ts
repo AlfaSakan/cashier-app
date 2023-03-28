@@ -18,5 +18,7 @@ export function convertTransactionToChart(data: Transaction[]): ChartType[] {
 		mappingData.set(x, y);
 	});
 
-	return Array.from(mappingData).map(([key, value]) => ({ x: key, y: value }));
+	return Array.from(mappingData)
+		.map(([key, value]) => ({ x: key, y: value }))
+		.sort((a, b) => a.x - b.x);
 }
