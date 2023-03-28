@@ -1,11 +1,14 @@
-import { errorMessages } from '$lib/client/constants/error.constant';
 import { userMock } from '$lib/__mocks__/dummy/user.dummy';
+import { errorMessages } from '$lib/client/constants/error.constant';
 import { describe, expect, it } from 'vitest';
 import { generateToken, verifyToken } from './jwt-token';
+
+const sessionId = 'session-id';
 
 describe('generateToken', () => {
 	it('should be able generate access token and refresh token', () => {
 		const token = generateToken({
+			sessionId,
 			email: 'admin@gmail.com',
 			userId: 'some-id'
 		});
@@ -18,6 +21,7 @@ describe('generateToken', () => {
 describe('verifyToken', () => {
 	it('should be able to verify token', () => {
 		const token = generateToken({
+			sessionId,
 			email: userMock.email,
 			userId: userMock.id
 		});

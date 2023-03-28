@@ -111,8 +111,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -140,8 +139,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -169,8 +167,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -199,8 +196,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -212,7 +208,7 @@ describe('AuthService', () => {
 		it('should error token expired', async () => {
 			prismaMock.user.findUnique.mockResolvedValueOnce(userMock);
 
-			const spySession = vi.spyOn(authService, 'createSession');
+			const spySession = vi.spyOn(authService, 'updateSession');
 			spySession.mockResolvedValueOnce({
 				error: null,
 				token: tokenMock
@@ -225,8 +221,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({

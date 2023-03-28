@@ -30,6 +30,6 @@ export const actions: Actions = {
 
 		if (err) throw error(400, { message: err });
 
-		throw redirect(301, '/warehouse');
+		throw redirect(301, '/store');
 	}
 };

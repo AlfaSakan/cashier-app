@@ -56,7 +56,11 @@ export class TransactionService {
 	async findTransactionById(transactionId: string) {
 		const transaction = await prisma.transactionHistory.findUnique({
 			where: { id: transactionId },
-			include: { TransactionProduct: true }
+			include: {
+				TransactionProduct: {
+					include: { product: true }
+				}
+			}
 		});
 		if (transaction === null)
 			return { transaction: null, error: errorMessages['transaction-not-found'] };
@@ -79,7 +83,10 @@ export class TransactionService {
 		const transactions = await prisma.transactionHistory.findMany({
 			where: { userId },
 			take,
-			include: { TransactionProduct: true }
+			include: { TransactionProduct: true },
+			orderBy: {
+				createdAt: 'desc'
+			}
 		});
 
 		return { transactions, error: null };
