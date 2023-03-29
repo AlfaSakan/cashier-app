@@ -1,6 +1,4 @@
-import f from 'date-fns/format';
-import isToday from 'date-fns/isToday';
-import id from 'date-fns/locale/id';
+import { format as f, isToday } from 'date-fns';
 
 export const SECOND_IN_MILLISECOND = 1000;
 export const MINUTES_IN_SECOND = 60;
@@ -12,7 +10,7 @@ export function generateUnixSecond() {
 }
 
 export function format(second: number, format: string) {
-	return f(second * 1000, format, { locale: id });
+	return f(second * 1000, format, { locale: { code: 'id-ID' } });
 }
 
 export function getLabelDate(second: number) {
