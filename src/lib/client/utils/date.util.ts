@@ -1,6 +1,9 @@
-import f from 'date-fns/format';
-import isToday from 'date-fns/isToday';
-import id from 'date-fns/locale/id';
+import { format as f, isToday } from 'date-fns';
+import id from 'date-fns/locale/id/index';
+// let id: Locale;
+// import('date-fns/locale/id/index').then((locale) => {
+// 	id = locale.default;
+// });
 
 export const SECOND_IN_MILLISECOND = 1000;
 export const MINUTES_IN_SECOND = 60;
