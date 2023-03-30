@@ -1,6 +1,5 @@
 import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import type { LoginDto } from '$lib/schema/session.schema';
-import { env } from '$lib/server/constants/env.constant';
 import { authService } from '$lib/server/service';
 import { error, fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
@@ -27,8 +26,8 @@ export const actions: Actions = {
 			throw error(500, { message: loginData.error });
 		}
 
-		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { domain: env.domain });
-		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { domain: env.domain });
+		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { secure: false, path: '/' });
+		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { secure: false, path: '/' });
 
 		throw redirect(303, '/');
 	}

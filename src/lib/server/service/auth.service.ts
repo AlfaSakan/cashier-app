@@ -8,7 +8,6 @@ import type {
 	UpdateSessionDto
 } from '$lib/schema/session.schema';
 import { createId } from '@paralleldrive/cuid2';
-import { env } from '../constants/env.constant';
 import { generateHash } from '../utils/hash.util';
 import { generateToken, verifyToken } from '../utils/jwt-token';
 import prisma from '../utils/prisma';
@@ -68,8 +67,14 @@ export class AuthService {
 				sessionId: payload.data.sessionId
 			});
 
-			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, { domain: env.domain });
-			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, { domain: env.domain });
+			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, {
+				secure: false,
+				path: '/'
+			});
+			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, {
+				secure: false,
+				path: '/'
+			});
 
 			payload = verifyToken(resultToken.token.accessToken);
 			if (!payload.data) return payload;
