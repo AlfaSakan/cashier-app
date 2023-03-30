@@ -5,7 +5,8 @@ describe('env', () => {
 	it('env should be define all', () => {
 		const envTest: typeof env = {
 			salt: 'sangatrahasia',
-			jwtKey: 'rahasia123'
+			jwtKey: 'rahasia123',
+			domain: 'localhost'
 		};
 
 		expect(env).toEqual(envTest);
