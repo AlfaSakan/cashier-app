@@ -1,11 +1,8 @@
 import { transactionService } from '$lib/server/service';
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ parent, params }) => {
-	const { data } = await parent();
-	if (data === null) throw redirect(301, '/login');
-
+export const load: PageServerLoad = async ({ params }) => {
 	const { error: err, transaction } = await transactionService.findTransactionById(
 		params.transactionId
 	);

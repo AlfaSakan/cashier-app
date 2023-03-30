@@ -6,7 +6,6 @@ import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, parent }) => {
 	const { data } = await parent();
-	if (data === null) throw redirect(301, '/login');
 
 	const { product, error: err } = await productService.findProductById({
 		userId: data.id,

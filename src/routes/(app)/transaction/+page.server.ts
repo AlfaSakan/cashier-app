@@ -11,8 +11,6 @@ type FormData = {
 export const load: PageServerLoad = async ({ parent }) => {
 	const { data } = await parent();
 
-	if (data === null) throw redirect(301, '/login');
-
 	return {
 		user: data
 	};
