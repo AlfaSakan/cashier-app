@@ -6,10 +6,11 @@ on:
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using private key
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Deploy using ssh
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.HOST }}
@@ -18,7 +19,7 @@ jobs:
           port: 22
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            cd /root/cashier-app
+            cd ~/cashier-app
             git pull origin development
             git status
             pnpm install
