@@ -8,8 +8,6 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ parent }) => {
 	const { data } = await parent();
 
-	if (data === null) throw redirect(301, '/login');
-
 	return { user: data };
 };
 
