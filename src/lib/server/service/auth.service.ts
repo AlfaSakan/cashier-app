@@ -67,8 +67,8 @@ export class AuthService {
 				sessionId: payload.data.sessionId
 			});
 
-			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken);
-			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken);
+			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, { path: '/' });
+			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, { path: '/' });
 
 			payload = verifyToken(resultToken.token.accessToken);
 			if (!payload.data) return payload;
