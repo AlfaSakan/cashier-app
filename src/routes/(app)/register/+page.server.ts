@@ -27,8 +27,8 @@ export const actions: Actions = {
 
 		if (loginData.error) throw error(500, { message: loginData.error });
 
-		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { secure: false, path: '/' });
-		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { secure: false, path: '/' });
+		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { secure: true, path: '/' });
+		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { secure: true, path: '/' });
 
 		throw redirect(303, '/');
 	}

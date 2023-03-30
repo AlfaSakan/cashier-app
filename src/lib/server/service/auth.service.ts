@@ -68,11 +68,11 @@ export class AuthService {
 			});
 
 			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, {
-				secure: false,
+				secure: true,
 				path: '/'
 			});
 			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, {
-				secure: false,
+				secure: true,
 				path: '/'
 			});
 
