@@ -1,5 +1,6 @@
 import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import type { SignUpDto } from '$lib/schema/session.schema';
+import { env } from '$lib/server/constants/env.constant';
 import { authService, userService } from '$lib/server/service';
 import { error, fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
@@ -27,8 +28,8 @@ export const actions: Actions = {
 
 		if (loginData.error) throw error(500, { message: loginData.error });
 
-		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { path: '/', httpOnly: true });
-		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { path: '/', httpOnly: true });
+		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, { domain: env.domain });
+		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, { domain: env.domain });
 
 		throw redirect(303, '/');
 	}
