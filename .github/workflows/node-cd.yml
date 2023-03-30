@@ -2,7 +2,7 @@ name: Node CD
 
 on:
   push:
-    branch: ['development']
+    branches: ['development']
 
 jobs:
   build:
