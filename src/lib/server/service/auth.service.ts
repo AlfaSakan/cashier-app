@@ -1,6 +1,6 @@
 import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import { errorMessages } from '$lib/client/constants/error.constant';
-import { generateUnixSecond } from '$lib/client/utils/date.util';
+import { DAYS_IN_SECOND, generateNext7Days, generateUnixSecond } from '$lib/client/utils/date.util';
 import type {
 	CreateSessionDto,
 	GetUserToken,
@@ -69,11 +69,15 @@ export class AuthService {
 
 			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, {
 				secure: true,
-				path: '/'
+				path: '/',
+				expires: generateNext7Days(),
+				maxAge: 7 * DAYS_IN_SECOND
 			});
 			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, {
 				secure: true,
-				path: '/'
+				path: '/',
+				expires: generateNext7Days(),
+				maxAge: 7 * DAYS_IN_SECOND
 			});
 
 			payload = verifyToken(resultToken.token.accessToken);
