@@ -40,7 +40,8 @@
 	};
 </script>
 
-<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center px-6 bg-white">
+<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center bg-white flex-col gap-4">
+	<h1 class="font-bold text-5xl">Registrasi Akun</h1>
 	<form
 		action="?/signUp"
 		method="post"
@@ -68,6 +69,10 @@
 			placeholder="+6 huruf"
 			min={6}
 		/>
+		<span class="flex items-center gap-1">
+			<p>Sudah punya akun?</p>
+			<a href="/login" class="text-primary font-semibold">Masuk</a>
+		</span>
 		<button class="btn btn-primary w-full" disabled={loading}>Masuk</button>
 	</form>
 </div>

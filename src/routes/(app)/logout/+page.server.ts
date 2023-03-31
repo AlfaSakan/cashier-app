@@ -11,5 +11,5 @@ export const load: PageServerLoad = async ({ cookies, parent }) => {
 	cookies.delete(cookiesKey.accessKey);
 	cookies.delete(cookiesKey.refreshKey);
 
-	throw redirect(301, '/login');
+	throw redirect(302, '/login');
 };

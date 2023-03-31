@@ -40,7 +40,8 @@
 	};
 </script>
 
-<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center px-6 bg-white">
+<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center bg-white flex-col gap-4">
+	<h1 class="font-bold text-5xl">Masuk Aplikasi</h1>
 	<form
 		action="?/signIn"
 		method="post"
@@ -61,7 +62,10 @@
 			placeholder="Password"
 			type="password"
 		/>
-		<a href="/register" class="text-primary font-semibold">Daftar</a>
+		<span class="flex items-center gap-1">
+			<p>Belum punya akun?</p>
+			<a href="/register" class="text-primary font-semibold">Daftar</a>
+		</span>
 		<button class="btn btn-primary w-full">Masuk</button>
 	</form>
 </div>
