@@ -14,5 +14,8 @@ module.exports = {
 			}
 		}
 	},
+	daisyui: {
+		themes: ['bumblebee', 'dracula']
+	},
 	plugins: [require('daisyui'), require('@tailwindcss/line-clamp')]
 };
