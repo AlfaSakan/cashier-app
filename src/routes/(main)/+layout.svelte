@@ -6,14 +6,14 @@
 
 	let inputRef: HTMLInputElement;
 
-	$: checkedTheme = $themeStore === 'bumblebee';
+	$: checkedTheme = $themeStore === 'emerald';
 
 	function closeSidebar() {
 		inputRef.checked = false;
 	}
 
 	function handleThemeToggle() {
-		const dataTheme = checkedTheme ? 'dracula' : 'bumblebee';
+		const dataTheme = checkedTheme ? 'dark' : 'emerald';
 		document.documentElement.setAttribute('data-theme', dataTheme);
 		localStorage.setItem('data-theme', dataTheme);
 		$themeStore = dataTheme;
@@ -34,16 +34,16 @@
 	<BottomNavigation currentPage={$page.url.pathname} />
 	<div class="drawer-side">
 		<label for="my-drawer-2" class="drawer-overlay" />
-		<ul class="menu p-4 w-80 bg-base-100 text-base-content gap-4">
+		<ul class="menu p-4 w-80 bg-base-200 text-base-content gap-4">
 			<!-- Sidebar content here -->
 			<div class="mt-20" />
 			<SwapTheme checked={checkedTheme} on:click={handleThemeToggle} />
-			<li><a href="/warehouse" on:click={closeSidebar} class="btn">Daftar Barang</a></li>
-			<li><a href="/" on:click={closeSidebar} class="btn">Sidebar Item 1</a></li>
 			<li>
-				<a href="/logout" class="btn btn-error text-white btn-outline" on:click={closeSidebar}
-					>Keluar</a
-				>
+				<a href="/warehouse" on:click={closeSidebar} class="btn btn-primary">Daftar Barang</a>
+			</li>
+			<li><a href="/" on:click={closeSidebar} class="btn btn-primary">Sidebar Item 1</a></li>
+			<li>
+				<a href="/logout" class="btn btn-error btn-outline" on:click={closeSidebar}>Keluar</a>
 			</li>
 		</ul>
 	</div>

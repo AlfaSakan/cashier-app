@@ -5,8 +5,8 @@
 
 	onMount(() => {
 		const dataTheme = localStorage.getItem('data-theme');
-		document.documentElement.setAttribute('data-theme', dataTheme || 'bumblebee');
-		$themeStore = dataTheme || 'bumblebee';
+		document.documentElement.setAttribute('data-theme', dataTheme || 'emerald');
+		$themeStore = dataTheme || 'emerald';
 	});
 </script>
 

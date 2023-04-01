@@ -40,12 +40,12 @@
 	};
 </script>
 
-<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center bg-white flex-col gap-4">
+<div class="flex min-h-[calc(100vh-10rem)] items-center justify-center flex-col gap-4">
 	<h1 class="font-bold text-5xl">Registrasi Akun</h1>
 	<form
 		action="?/signUp"
 		method="post"
-		class="card shadow-xl w-96 bg-base-100 p-10 border"
+		class="card shadow-xl w-96 bg-base-100 p-10 border border-base-content border-opacity-20"
 		use:enhance={submitForm}
 	>
 		<TextInput
