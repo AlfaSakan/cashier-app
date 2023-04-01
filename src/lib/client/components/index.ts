@@ -1,3 +1,4 @@
+import SwapTheme from './atoms/SwapTheme/SwapTheme.atom.svelte';
 import TextInput from './atoms/TextInput/TextInput.atom.svelte';
 import TextInputArea from './atoms/TextInputArea/TextInputArea.atom.svelte';
 import TextInputNumber from './atoms/TextInputNumber/TextInputNumber.atom.svelte';
@@ -12,6 +13,7 @@ import ChartArea from './organisms/ChartArea/ChartArea.organism.svelte';
 import HeaderNavigation from './organisms/HeaderNavigation/HeaderNavigation.organism.svelte';
 
 export {
+	SwapTheme,
 	BottomNavigation,
 	BottomTransaction,
 	Card,
