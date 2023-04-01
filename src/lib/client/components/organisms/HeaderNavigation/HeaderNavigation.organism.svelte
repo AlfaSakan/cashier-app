@@ -12,11 +12,11 @@
 	}
 </script>
 
-<div class="navbar bg-base-100 border-b sticky top-0">
+<div class="navbar bg-base-100 border-b sticky top-0 border-base-200">
 	<div class="navbar-start">
 		{#if backIcon}
 			<button class="btn btn-ghost btn-circle" on:click={handleBack}>
-				<ChevronLeft width="24" height="24" fill="white" />
+				<ChevronLeft width="24" height="24" />
 			</button>
 		{:else}
 			<label class="btn btn-ghost btn-circle" for="my-drawer-2">
@@ -35,7 +35,7 @@
 			<button class="btn btn-ghost btn-circle">
 				<div class="indicator">
 					<BellNotif />
-					<span class="badge badge-xs badge-primary indicator-item" />
+					<span class="badge badge-xs badge-primary indicator-item bg-primary border-primary" />
 				</div>
 			</button>
 		{/if}

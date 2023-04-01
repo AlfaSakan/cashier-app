@@ -37,14 +37,8 @@
 					class="text-sm font-extralight tick-{tick}"
 					transform="translate(0, {yScale(tick) - padding.bottom})"
 				>
-					<line
-						x2="100%"
-						stroke-dasharray={index === 0 ? 0 : 2}
-						class="stroke-gray-900 dark:stroke-slate-200"
-					/>
-					<text y="-4" class="fill-gray-800 text-xs font-medium dark:fill-white" text-anchor="start"
-						>{tick}rb</text
-					>
+					<line x2="100%" stroke-dasharray={index === 0 ? 0 : 2} class="stroke-current" />
+					<text y="-4" class="fill-current text-xs font-medium" text-anchor="start">{tick}rb</text>
 				</g>
 			{/each}
 		</g>
@@ -62,28 +56,20 @@
 						x1="0"
 						x2="0"
 						stroke-dasharray={index === 0 ? 0 : 2}
-						class="stroke-gray-900 dark:stroke-slate-200"
+						class="stroke-current"
 					/>
-					<text y="-2" class="fill-gray-800 dark:fill-white" text-anchor="middle"
-						>{format(tick, 'dd MMM')}</text
-					>
+					<text y="-2" class="fill-current" text-anchor="middle">{format(tick, 'dd MMM')}</text>
 				</g>
 			{/each}
 		</g>
 
 		<!-- data -->
-		<path class="path-area" d={area} />
+		<path class="fill-primary opacity-20" d={area} />
 		<path
-			class="fill-none stroke-green-900 stroke-2"
+			class="fill-none stroke-primary stroke-2"
 			stroke-linejoin="round"
 			stroke-linecap="round"
 			d={path}
 		/>
 	</svg>
 </div>
-
-<style>
-	.path-area {
-		fill: rgba(0, 100, 100, 0.2);
-	}
-</style>

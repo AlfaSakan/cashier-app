@@ -28,10 +28,13 @@
 	});
 </script>
 
-<a {href} class="bg-slate-100 rounded-lg w-full flex py-4 px-3 items-start gap-2">
+<a
+	{href}
+	class="border-base-content border-opacity-20 border rounded-lg w-full flex py-4 px-3 items-start gap-2"
+>
 	<div class="flex flex-col flex-1 items-start justify-between">
 		<p class="font-semibold line-clamp-1">Total produk {totalProduct}</p>
-		<p class="text-slate-500">Total barang {totalAmount}</p>
+		<p class="">Total barang {totalAmount}</p>
 	</div>
 	<div class="flex flex-col items-end h-full justify-between">
 		<p class="text-xs">

@@ -9,7 +9,7 @@
 </script>
 
 <input
-	class="border border-gray-900 focus:outline-none border-opacity-20 text-center rounded text-xl {className}"
+	class="bg-base-200 focus:outline-none text-center rounded text-xl border border-base-content border-opacity-20 {className}"
 	{max}
 	{maxlength}
 	{min}

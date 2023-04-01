@@ -61,46 +61,49 @@
 	}
 </script>
 
-<button
-	class="bg-slate-100 rounded-lg flex py-4 px-3 items-center gap-2"
-	on:click={handleClickCard}
->
-	<div class="rounded-full bg-slate-300 w-12 h-12 flex items-center justify-center">
-		<Person />
-	</div>
-	<div class="flex flex-col flex-1 items-start">
-		<p class="font-semibold line-clamp-1">{product.name}</p>
-		<p>{formatNumberToRupiah(product.price)}</p>
-		<p class="text-sm text-zinc-500">{product.amount} {product.unit}</p>
-	</div>
-	{#if stockInCart || isFocus}
-		<button class="ml-auto flex items-center gap-1" on:click|stopPropagation>
-			<TextInputNumber
-				value={(stockInCart || 0).toString()}
-				on:input={handleInput}
-				on:blur={handleBlur}
-				on:focus={handleFocus}
-			/>
-			<div class="flex flex-col items-center justify-between gap-1">
-				<button
-					type="button"
-					class="shadow bg-white rounded"
-					on:click|stopPropagation={handleAddAmount}
-				>
-					<Plus />
-				</button>
-				<button
-					type="button"
-					class="shadow bg-white rounded"
-					on:click|stopPropagation={handleSubtractAmount}
-				>
-					<Minus />
-				</button>
-			</div>
-		</button>
-	{:else}
-		<a {href} class="mb-auto" on:click|stopPropagation>
+<div class="relative">
+	<button
+		class="border-base-content w-full border-opacity-20 border rounded-lg flex py-4 px-3 items-center gap-2"
+		on:click={handleClickCard}
+	>
+		<div class="rounded-full bg-primary w-12 h-12 flex items-center justify-center">
+			<Person class="fill-base-100" />
+		</div>
+		<div class="flex flex-col flex-1 items-start text-current">
+			<p class="font-semibold line-clamp-1">{product.name}</p>
+			<p>{formatNumberToRupiah(product.price)}</p>
+			<p class="text-sm">{product.amount} {product.unit}</p>
+		</div>
+		{#if stockInCart || isFocus}
+			<button class="ml-auto flex items-center gap-1" on:click|stopPropagation>
+				<TextInputNumber
+					value={(stockInCart || 0).toString()}
+					on:input={handleInput}
+					on:blur={handleBlur}
+					on:focus={handleFocus}
+				/>
+				<div class="flex flex-col items-center justify-between gap-1">
+					<button
+						type="button"
+						class="shadow bg-primary rounded"
+						on:click|stopPropagation={handleAddAmount}
+					>
+						<Plus />
+					</button>
+					<button
+						type="button"
+						class="shadow bg-primary rounded"
+						on:click|stopPropagation={handleSubtractAmount}
+					>
+						<Minus />
+					</button>
+				</div>
+			</button>
+		{/if}
+	</button>
+	{#if !(stockInCart || isFocus)}
+		<a {href} class="mb-auto absolute top-3 right-3">
 			<Setting />
 		</a>
 	{/if}
-</button>
+</div>

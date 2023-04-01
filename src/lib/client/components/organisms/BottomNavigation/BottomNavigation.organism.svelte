@@ -7,16 +7,26 @@
 	export let currentPage = '/';
 </script>
 
-<div class="btm-nav">
-	<a type="button" class={currentPage === '/' ? 'active' : ''} href="/">
+<div class="btm-nav bg-base-200">
+	<a
+		type="button"
+		class={currentPage === '/' ? 'active bg-inherit border-primary border-t-4' : ''}
+		href="/"
+	>
 		<Home />
 	</a>
-	<a type="button" class={currentPage === '/store' ? 'active' : ''} href="/store">
+	<a
+		type="button"
+		class={currentPage === '/store' ? 'active bg-inherit border-primary border-t-4' : ''}
+		href="/store"
+	>
 		<BagShopping />
 	</a>
 	<a
 		type="button"
-		class={currentPage === '/history-transaction' ? 'active' : ''}
+		class={currentPage === '/history-transaction'
+			? 'active bg-inherit border-primary border-t-4'
+			: ''}
 		href="/history-transaction"
 	>
 		<Chart />

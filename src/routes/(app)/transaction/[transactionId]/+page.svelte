@@ -13,6 +13,9 @@
 </script>
 
 <div class="grid grid-cols-9 text-center text-sm gap-y-4">
+	<div class="col-span-9 text-start text-base">
+		<h3 class="text-2xl text-center font-bold">Nota Transaksi</h3>
+	</div>
 	<div class="col-span-7 text-start text-base">
 		<p class="font-medium">Pukul</p>
 	</div>

@@ -13,7 +13,7 @@
 	<label for={name} class="label">
 		<span class="label-text font-semibold">{label}</span>
 	</label>
-	<div class="input input-bordered w-full flex items-center gap-2">
+	<div class="input input-bordered w-full flex items-center gap-2 bg-base-200">
 		<slot name="leading">
 			<div class="hidden" />
 		</slot>
