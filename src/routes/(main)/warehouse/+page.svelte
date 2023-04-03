@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { TextInput } from '$lib/client/components';
+	import { ModalDeleteProduct, TextInput } from '$lib/client/components';
 	import Plus from '$lib/client/components/Icons/Plus.svelte';
+	import Trash from '$lib/client/components/Icons/Trash.svelte';
 	import { getLabelDate } from '$lib/client/utils/date.util';
 	import { formatNumberToRupiah } from '$lib/client/utils/number.util';
+	import { toast } from 'svelte-french-toast';
 	import type { PageServerData } from './$types';
 
 	export let data: PageServerData;
@@ -16,6 +18,40 @@
 	$: products = data.products.filter((product) =>
 		product.name.toLowerCase().includes(search.toLowerCase())
 	);
+
+	let visibleModal = false;
+	let deleteProduct = { productId: '', productName: '' };
+	function handleDeleteProduct(productId: string, productName: string) {
+		toggleModal();
+		deleteProduct = { productId, productName };
+	}
+
+	function toggleModal() {
+		visibleModal = !visibleModal;
+	}
+
+	async function handleConfirmDelete() {
+		try {
+			await fetch('/warehouse', {
+				body: JSON.stringify({ productId: deleteProduct.productId, userId: data.user.id }),
+				method: 'DELETE',
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
+
+			data.products = data.products.filter((pro) => pro.id !== deleteProduct.productId);
+
+			toggleModal();
+			deleteProduct = { productId: '', productName: '' };
+			toast.success('Produk berhasil dihapus');
+		} catch (error) {
+			toast.error('Terjadi kesalahan coba lagi nanti');
+			console.warn(error);
+		}
+	}
+
+	const headerItems = ['No', 'Nama', 'Harga', 'Jumlah', 'Satuan', 'Terjual', 'Perubahan', 'Hapus'];
 </script>
 
 <div class="-mt-4 flex items-center gap-2">
@@ -32,16 +68,12 @@
 </div>
 
 <div class="overflow-x-auto">
-	<table class="table table-compact w-full">
+	<table class="table table-compact w-full" data-testid="table:products">
 		<thead>
 			<tr>
-				<th>No</th>
-				<th>Nama</th>
-				<th>Harga</th>
-				<th>Jumlah</th>
-				<th>Satuan</th>
-				<th>Terjual</th>
-				<th>Perubahan Terakhir</th>
+				{#each headerItems as item, index (index)}
+					<th>{item}</th>
+				{/each}
 			</tr>
 		</thead>
 		<tbody>
@@ -54,19 +86,31 @@
 					<td>{product.unit}</td>
 					<td>120</td>
 					<td>{getLabelDate(product.updatedAt)}</td>
+					<td>
+						<button
+							on:click={() => handleDeleteProduct(product.id, product.name)}
+							data-testid="table:product:delete:{index + 1}"
+						>
+							<Trash class="fill-error" />
+						</button>
+					</td>
 				</tr>
 			{/each}
 		</tbody>
 		<tfoot>
 			<tr>
-				<th>No</th>
-				<th>Nama</th>
-				<th>Harga</th>
-				<th>Jumlah</th>
-				<th>Satuan</th>
-				<th>Terjual</th>
-				<th>Perubahan Terakhir</th>
+				{#each headerItems as item, index (index)}
+					<th>{item}</th>
+				{/each}
 			</tr>
 		</tfoot>
 	</table>
 </div>
+
+{#if visibleModal}
+	<ModalDeleteProduct
+		productName={deleteProduct.productName}
+		onCancel={toggleModal}
+		onConfirm={handleConfirmDelete}
+	/>
+{/if}

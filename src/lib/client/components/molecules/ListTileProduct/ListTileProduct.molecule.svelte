@@ -15,6 +15,7 @@
 	export let stockInCart: number | undefined;
 	export let href = '';
 	export let isFocus = false;
+	export let testid = '';
 
 	function handleAddAmount() {
 		dispatch('add', {
@@ -61,7 +62,7 @@
 	}
 </script>
 
-<div class="relative">
+<div class="relative" data-testid={testid}>
 	<button
 		class="border-base-content w-full border-opacity-20 border rounded-lg flex py-4 px-3 items-center gap-2"
 		on:click={handleClickCard}
@@ -72,7 +73,7 @@
 		<div class="flex flex-col flex-1 items-start text-current">
 			<p class="font-semibold line-clamp-1">{product.name}</p>
 			<p>{formatNumberToRupiah(product.price)}</p>
-			<p class="text-sm">{product.amount} {product.unit}</p>
+			<p class="text-sm" data-testid="list-tile-product:amount">{product.amount} {product.unit}</p>
 		</div>
 		{#if stockInCart || isFocus}
 			<button class="ml-auto flex items-center gap-1" on:click|stopPropagation>

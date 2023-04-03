@@ -43,7 +43,12 @@
 			</li>
 			<li><a href="/" on:click={closeSidebar} class="btn btn-primary">Sidebar Item 1</a></li>
 			<li>
-				<a href="/logout" class="btn btn-error btn-outline" on:click={closeSidebar}>Keluar</a>
+				<a
+					href="/logout"
+					class="btn btn-error btn-outline"
+					on:click={closeSidebar}
+					data-testid="sidebar:button:logout">Keluar</a
+				>
 			</li>
 		</ul>
 	</div>

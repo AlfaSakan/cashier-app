@@ -29,6 +29,6 @@ export const actions: Actions = {
 		});
 		if (errProduct !== null) throw error(400, errProduct);
 
-		throw redirect(301, '/warehouse');
+		throw redirect(301, '/store');
 	}
 };
