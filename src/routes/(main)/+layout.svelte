@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { BottomNavigation, HeaderNavigation, SwapTheme } from '$lib/client/components';
+	import { BottomNavigation, HeaderNavigation, SidebarNavigation } from '$lib/client/components';
 	import { themeStore } from '$lib/client/store/theme.store';
 	import { Toaster } from 'svelte-french-toast';
 
@@ -24,7 +24,7 @@
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" bind:this={inputRef} />
 	<div class="drawer-content flex flex-col">
 		<!-- Page content here -->
-		<HeaderNavigation />
+		<HeaderNavigation rightIcon={false} />
 		<div class="flex flex-col p-4 mb-16">
 			<slot />
 		</div>
@@ -32,24 +32,5 @@
 	</div>
 
 	<BottomNavigation currentPage={$page.url.pathname} />
-	<div class="drawer-side">
-		<label for="my-drawer-2" class="drawer-overlay" />
-		<ul class="menu p-4 w-80 bg-base-200 text-base-content gap-4">
-			<!-- Sidebar content here -->
-			<div class="mt-20" />
-			<SwapTheme checked={checkedTheme} on:click={handleThemeToggle} />
-			<li>
-				<a href="/warehouse" on:click={closeSidebar} class="btn btn-primary">Daftar Barang</a>
-			</li>
-			<li><a href="/" on:click={closeSidebar} class="btn btn-primary">Sidebar Item 1</a></li>
-			<li>
-				<a
-					href="/logout"
-					class="btn btn-error btn-outline"
-					on:click={closeSidebar}
-					data-testid="sidebar:button:logout">Keluar</a
-				>
-			</li>
-		</ul>
-	</div>
+	<SidebarNavigation {closeSidebar} onThemeToggle={handleThemeToggle} {checkedTheme} />
 </div>

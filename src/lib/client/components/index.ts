@@ -13,8 +13,10 @@ import ModalDeleteProduct from './molecules/ModalDeleteProduct/ModalDeleteProduc
 import BottomNavigation from './organisms/BottomNavigation/BottomNavigation.organism.svelte';
 import ChartArea from './organisms/ChartArea/ChartArea.organism.svelte';
 import HeaderNavigation from './organisms/HeaderNavigation/HeaderNavigation.organism.svelte';
+import SidebarNavigation from './organisms/SidebarNavigation/SidebarNavigation.organism.svelte';
 
 export {
+	SidebarNavigation,
 	Modal,
 	SwapTheme,
 	BottomNavigation,

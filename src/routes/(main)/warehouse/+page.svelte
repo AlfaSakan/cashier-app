@@ -62,7 +62,13 @@
 		placeholder="Pencarian"
 		on:input={handleChangeSearch}
 	/>
-	<a type="button" class="btn btn-primary" href="/add-product">
+	<a
+		type="button"
+		class="btn btn-primary"
+		href="/add-product"
+		aria-label="add new product"
+		data-testid="navigate:add-product"
+	>
 		<Plus width="24" height="24" />
 	</a>
 </div>
@@ -90,6 +96,7 @@
 						<button
 							on:click={() => handleDeleteProduct(product.id, product.name)}
 							data-testid="table:product:delete:{index + 1}"
+							aria-label="button delete product"
 						>
 							<Trash class="fill-error" />
 						</button>

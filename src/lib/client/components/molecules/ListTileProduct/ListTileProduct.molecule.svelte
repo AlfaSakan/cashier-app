@@ -103,8 +103,8 @@
 		{/if}
 	</button>
 	{#if !(stockInCart || isFocus)}
-		<a {href} class="mb-auto absolute top-3 right-3">
-			<Setting />
+		<a {href} class="mb-auto absolute top-3 right-3" aria-label="edit product">
+			<Setting width="24" height="24" />
 		</a>
 	{/if}
 </div>
