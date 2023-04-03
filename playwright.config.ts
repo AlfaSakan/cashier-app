@@ -1,11 +1,19 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
+import { devices, PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
 	webServer: {
-		command: 'npm run build && npm run preview',
+		command: 'pnpm run build && pnpm run preview',
 		port: 4173
 	},
-	testDir: 'tests'
+	testDir: 'tests',
+	projects: [
+		{
+			name: 'chromium',
+			use: { ...devices['Nexus 10'] }
+		}
+	],
+	testMatch: 'tests/*.ts',
+	reporter: 'html'
 };
 
 export default config;

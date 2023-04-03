@@ -100,12 +100,12 @@
 		placeholder="Pencarian"
 		on:input={handleChangeSearch}
 	/>
-	<a type="button" class="btn btn-primary" href="/add-product">
+	<a type="button" class="btn btn-primary" href="/add-product" data-testid="navigate:add-product">
 		<Plus width="24" height="24" />
 	</a>
 </div>
 <div class="flex flex-col gap-4">
-	{#each filteredProducts as product (product.id)}
+	{#each filteredProducts as product, index (product.id)}
 		<ListTileProduct
 			on:add={handleAmount}
 			on:subtract={handleAmount}
@@ -115,6 +115,7 @@
 			href="edit-product/{product.id}"
 			on:input={handleInputAmount}
 			on:blur={removeZeroAmount}
+			testid="product:{index + 1}"
 		/>
 	{/each}
 </div>

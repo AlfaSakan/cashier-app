@@ -9,6 +9,7 @@ export const load: PageServerLoad = async ({ parent }) => {
 	if (err) throw error(400, { message: err });
 
 	return {
-		products
+		products,
+		user: data
 	};
 };
