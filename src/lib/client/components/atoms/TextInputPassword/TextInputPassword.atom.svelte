@@ -34,7 +34,7 @@
 			{min}
 			on:change
 		/>
-		<button type="button" on:click={togglePassword}>
+		<button type="button" on:click={togglePassword} aria-label="toggle visible password">
 			{#if isShow}
 				<EyeOn height="20" width="20" />
 			{:else}

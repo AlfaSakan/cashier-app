@@ -100,7 +100,13 @@
 		placeholder="Pencarian"
 		on:input={handleChangeSearch}
 	/>
-	<a type="button" class="btn btn-primary" href="/add-product" data-testid="navigate:add-product">
+	<a
+		type="button"
+		class="btn btn-primary"
+		href="/add-product"
+		data-testid="navigate:add-product"
+		aria-label="add new product"
+	>
 		<Plus width="24" height="24" />
 	</a>
 </div>

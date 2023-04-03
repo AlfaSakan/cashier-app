@@ -11,8 +11,9 @@
 			class={currentPage === item.route ? 'active bg-inherit border-primary border-t-4' : ''}
 			href={item.route}
 			data-testid={item.testid}
+			aria-label={item.ariaLabel}
 		>
-			<svelte:component this={item.icon} />
+			<svelte:component this={item.icon} width="24" height="24" />
 		</a>
 	{/each}
 </div>
