@@ -26,3 +26,9 @@ export function getLabelDate(second: number) {
 
 	return format(second, 'dd MMMM yyyy');
 }
+
+export function convertToDateValue(second: number) {
+	const ms = second * 1000;
+
+	return new Date(ms).toISOString().substring(0, 10);
+}

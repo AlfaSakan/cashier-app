@@ -4,7 +4,7 @@
 	export let currentPage = '/';
 </script>
 
-<div class="btm-nav bg-base-200">
+<div class="btm-nav bg-base-200 lg:hidden">
 	{#each bottomItems as item, index (index)}
 		<a
 			type="button"
