@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
 			use: { ...devices['Nexus 10'] }
 		}
 	],
-	testMatch: 'tests/*.ts',
+	testMatch: 'tests/*.e2e.ts',
 	reporter: 'html'
 };
 

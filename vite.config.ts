@@ -22,7 +22,7 @@ export default defineConfig({
 				'src/**/event-type.ts',
 				'src/routes/**/*'
 			],
-			reporter: ['json', 'text'],
+			reporter: ['text'],
 			all: true,
 			lines: 80,
 			functions: 80,
