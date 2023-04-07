@@ -96,7 +96,7 @@ test.describe('product e2e', () => {
 		const hamburger = page.getByTestId('header:hamburger');
 		await hamburger.click();
 
-		const daftarBarang = page.getByText(/Daftar Barang/);
+		const daftarBarang = page.getByText(/Gudang/);
 		await daftarBarang.click();
 
 		await expect(page).toHaveURL('/warehouse');

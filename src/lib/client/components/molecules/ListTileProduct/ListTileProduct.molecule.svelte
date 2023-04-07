@@ -2,11 +2,11 @@
 	import { formatNumberToRupiah } from '$lib/client/utils/number.util';
 	import type { Product } from '@prisma/client';
 	import { createEventDispatcher } from 'svelte';
-	import TextInputNumber from '../../atoms/TextInputNumber/TextInputNumber.atom.svelte';
 	import Minus from '../../Icons/Minus.svelte';
 	import Person from '../../Icons/Person.svelte';
 	import Plus from '../../Icons/Plus.svelte';
 	import Setting from '../../Icons/Setting.svelte';
+	import TextInputNumber from '../../atoms/TextInputNumber/TextInputNumber.atom.svelte';
 	import type { ListTileDispatch } from './event-type';
 
 	const dispatch = createEventDispatcher<ListTileDispatch>();
@@ -71,7 +71,7 @@
 			<Person class="fill-base-100" />
 		</div>
 		<div class="flex flex-col flex-1 items-start text-current">
-			<p class="font-semibold line-clamp-1">{product.name}</p>
+			<p class="font-semibold line-clamp-1" data-testid="list-tile-product:name">{product.name}</p>
 			<p>{formatNumberToRupiah(product.price)}</p>
 			<p class="text-sm" data-testid="list-tile-product:amount">{product.amount} {product.unit}</p>
 		</div>
