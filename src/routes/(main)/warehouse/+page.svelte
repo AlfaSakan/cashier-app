@@ -51,7 +51,17 @@
 		}
 	}
 
-	const headerItems = ['No', 'Nama', 'Harga', 'Jumlah', 'Satuan', 'Terjual', 'Perubahan', 'Hapus'];
+	// const headerItems = ['No', 'Nama', 'Harga', 'Jumlah', 'Satuan', 'Terjual', 'Perubahan', 'Hapus'];
+	const headerItems: { name: string; colspan: number }[] = [
+		{ name: 'No', colspan: 1 },
+		{ name: 'Nama', colspan: 2 },
+		{ name: 'Harga', colspan: 2 },
+		{ name: 'Jumlah', colspan: 1 },
+		{ name: 'Satuan', colspan: 1 },
+		{ name: 'Terjual', colspan: 1 },
+		{ name: 'Perubahan', colspan: 1 },
+		{ name: 'Hapus', colspan: 1 }
+	];
 </script>
 
 <div class="-mt-4 flex items-center gap-2">
@@ -78,7 +88,7 @@
 		<thead>
 			<tr>
 				{#each headerItems as item, index (index)}
-					<th>{item}</th>
+					<th colspan={item.colspan}>{item.name}</th>
 				{/each}
 			</tr>
 		</thead>
@@ -86,13 +96,13 @@
 			{#each products as product, index (product.id)}
 				<tr>
 					<th>{index + 1}</th>
-					<td>{product.name}</td>
-					<td>{formatNumberToRupiah(product.price)}</td>
+					<td colspan="2">{product.name}</td>
+					<td colspan="2">{formatNumberToRupiah(product.price)}</td>
 					<td>{product.amount}</td>
 					<td>{product.unit}</td>
 					<td>120</td>
 					<td>{getLabelDate(product.updatedAt)}</td>
-					<td>
+					<td class="flex items-center justify-center">
 						<button
 							on:click={() => handleDeleteProduct(product.id, product.name)}
 							data-testid="table:product:delete:{index + 1}"
@@ -102,12 +112,19 @@
 						</button>
 					</td>
 				</tr>
+			{:else}
+				<tr>
+					<th />
+					<td class="w-full flex items-center justify-center">
+						<p>Belum ada barang</p>
+					</td>
+				</tr>
 			{/each}
 		</tbody>
 		<tfoot>
 			<tr>
 				{#each headerItems as item, index (index)}
-					<th>{item}</th>
+					<th colspan={item.colspan}>{item.name}</th>
 				{/each}
 			</tr>
 		</tfoot>

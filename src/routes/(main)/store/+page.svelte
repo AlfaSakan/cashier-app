@@ -123,6 +123,10 @@
 			on:blur={removeZeroAmount}
 			testid="product:{index + 1}"
 		/>
+	{:else}
+		<div class="flex items-center justify-center min-h-[25rem] text-2xl font-medium">
+			<p>Belum ada barang</p>
+		</div>
 	{/each}
 </div>
 
