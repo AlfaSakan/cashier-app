@@ -28,7 +28,7 @@
 			data.set('userId', user.id);
 		}
 
-		return ({ result, update, action, form }) => {
+		return ({ result, update }) => {
 			switch (result.type) {
 				case 'error':
 					toast.error(result.error.message);
