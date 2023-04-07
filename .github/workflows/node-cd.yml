@@ -27,5 +27,6 @@ jobs:
             npm --help
             pnpm install
             npx prisma generate
+            rm -r build/
             pnpm build
             pm2 restart cashier-app
