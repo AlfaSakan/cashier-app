@@ -3,10 +3,16 @@
 	export let name: string;
 	export let error = '';
 	export let placeholder = '';
-	export let type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' = 'text';
+	export let type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' | 'date' = 'text';
 	export let value: string | number = '';
 	export let disabled = false;
 	export let min: number | undefined = undefined;
+
+	let inputRef: HTMLInputElement;
+
+	function handleFocus() {
+		inputRef.showPicker();
+	}
 </script>
 
 <div class="form-control w-full">
@@ -29,6 +35,9 @@
 			autocomplete="off"
 			on:change
 			on:input
+			on:focus={handleFocus}
+			on:blur
+			bind:this={inputRef}
 		/>
 		<slot name="trailing">
 			<div class="hidden" />

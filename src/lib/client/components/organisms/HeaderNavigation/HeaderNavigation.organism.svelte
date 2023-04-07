@@ -12,8 +12,8 @@
 	}
 </script>
 
-<div class="navbar bg-base-100 border-b sticky top-0 border-base-200">
-	<div class="navbar-start">
+<div class="navbar bg-base-100 border-b sticky top-0 border-base-200 lg:bg-base-200">
+	<div class="navbar-start lg:hidden">
 		{#if backIcon}
 			<button class="btn btn-ghost btn-circle" on:click={handleBack} data-testid="header:back">
 				<ChevronLeft width="24" height="24" />
@@ -24,7 +24,7 @@
 			</label>
 		{/if}
 	</div>
-	<div class="navbar-center">
+	<div class="navbar-center lg:hidden">
 		<a class="btn btn-ghost normal-case text-xl" href="/">Aplikasi Kasir</a>
 	</div>
 	<div class="navbar-end">

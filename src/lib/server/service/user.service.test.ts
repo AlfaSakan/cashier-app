@@ -1,6 +1,6 @@
+import { errorMessages } from '$lib/client/constants/error.constant';
 import { userMock } from '$lib/__mocks__/dummy/user.dummy';
 import prismaMock from '$lib/__mocks__/prisma';
-import { errorMessages } from '$lib/client/constants/error.constant';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {} from '../utils/hash.util';
 import { UserService } from './user.service';
@@ -117,9 +117,8 @@ describe('UserService', () => {
 			prismaMock.user.update.mockResolvedValue(userMock);
 
 			const result = await userService.updateUser({
-				email: userMock.email,
 				name: userMock.name,
-				password: userMock.hash
+				userId: 'user-id'
 			});
 
 			expect(result.user?.name).toBe(userMock.name);
@@ -129,9 +128,8 @@ describe('UserService', () => {
 			prismaMock.user.findUnique.mockResolvedValue(null);
 
 			const result = await userService.updateUser({
-				email: userMock.email,
-				name: userMock.name,
-				password: userMock.hash
+				userId: 'user-id',
+				name: userMock.name
 			});
 
 			expect(result).toEqual({ user: null, error: errorMessages['user-not-found'] });

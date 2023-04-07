@@ -36,16 +36,17 @@
 				default:
 					break;
 			}
+			loading = false;
 		};
 	};
 </script>
 
 <div class="flex min-h-[calc(100vh-10rem)] w-full items-center justify-center flex-col gap-4 px-4">
-	<h1 class="font-bold text-4xl">Masuk Aplikasi</h1>
+	<h1 class="text-4xl font-bold">Masuk Aplikasi</h1>
 	<form
 		action="?/signIn"
 		method="post"
-		class="card shadow-xl w-full max-w-sm bg-base-100 p-10 border border-base-content border-opacity-20"
+		class="w-full max-w-sm p-10 border shadow-xl card bg-base-100 border-base-content border-opacity-20"
 		use:enhance={submitForm}
 	>
 		<TextInput
@@ -64,8 +65,8 @@
 		/>
 		<span class="flex items-center gap-1">
 			<p>Belum punya akun?</p>
-			<a href="/register" class="text-primary font-semibold">Daftar</a>
+			<a href="/register" class="font-semibold text-primary">Daftar</a>
 		</span>
-		<button class="btn btn-primary w-full">Masuk</button>
+		<button disabled={loading} class="w-full btn btn-primary">Masuk</button>
 	</form>
 </div>

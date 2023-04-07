@@ -20,6 +20,10 @@ model User {
   hash  String
   level String @default("user") @db.VarChar(10)
 
+  storeName    String @default("") @db.VarChar(50)
+  placeOfBirth String @default("") @db.VarChar(50)
+  dateOfBirth  Int    @default(0)
+
   Session            Session[]
   Product            Product[]
   TransactionHistory TransactionHistory[]

@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "users" ADD COLUMN     "dateOfBirth" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "placeOfBirth" VARCHAR(50) NOT NULL DEFAULT '',
+ADD COLUMN     "storeName" VARCHAR(50) NOT NULL DEFAULT '';
