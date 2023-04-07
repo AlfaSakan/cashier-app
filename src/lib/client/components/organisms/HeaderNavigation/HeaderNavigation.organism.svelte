@@ -12,14 +12,18 @@
 	}
 </script>
 
-<div class="navbar bg-base-100 border-b sticky top-0 border-base-200 lg:bg-base-200">
-	<div class="navbar-start lg:hidden">
+<div class="navbar bg-base-100 border-b sticky top-0 border-base-200 lg:bg-base-200 z-10">
+	<div class="navbar-start">
 		{#if backIcon}
 			<button class="btn btn-ghost btn-circle" on:click={handleBack} data-testid="header:back">
 				<ChevronLeft width="24" height="24" />
 			</button>
 		{:else}
-			<label class="btn btn-ghost btn-circle" for="my-drawer-2" data-testid="header:hamburger">
+			<label
+				class="btn btn-ghost btn-circle lg:hidden"
+				for="my-drawer-2"
+				data-testid="header:hamburger"
+			>
 				<Hamburger />
 			</label>
 		{/if}

@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="absolute bottom-0 left-0 w-full px-4 animate-show-bottom-content"
+	class="absolute bottom-0 px-4 animate-show-bottom-content left-0 w-full lg:w-96 lg:right-0 lg:left-auto"
 	data-testid="bottom-transaction"
 >
 	<a {href} class="bg-primary rounded-lg w-full flex py-4 px-3 items-start gap-2 text-current">

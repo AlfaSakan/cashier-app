@@ -1,11 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
+	convertToDateValue,
 	DAYS_IN_SECOND,
+	generateUnixSecond,
+	getLabelDate,
 	HOURS_IN_SECOND,
 	MINUTES_IN_SECOND,
-	SECOND_IN_MILLISECOND,
-	generateUnixSecond,
-	getLabelDate
+	SECOND_IN_MILLISECOND
 } from './date.util';
 
 beforeEach(() => {
@@ -57,5 +58,11 @@ describe('constants', () => {
 
 	it('DAYS_IN_SECOND', () => {
 		expect(DAYS_IN_SECOND).toBe(24 * HOURS_IN_SECOND);
+	});
+});
+
+describe('convertToDateValue', () => {
+	it('should be able to convert second into yyyy-MM-dd', () => {
+		expect(convertToDateValue(0)).toBe('1970-01-01');
 	});
 });
