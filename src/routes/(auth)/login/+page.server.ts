@@ -1,7 +1,5 @@
-import { cookiesKey } from '$lib/client/constants/cookies.constant';
-import { DAYS_IN_SECOND, generateNext7Days } from '$lib/client/utils/date.util';
 import type { LoginDto } from '$lib/schema/session.schema';
-import { authService } from '$lib/server/service';
+import { authService, cookiesService } from '$lib/server/service';
 import { error, fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -27,18 +25,8 @@ export const actions: Actions = {
 			throw error(500, { message: loginData.error });
 		}
 
-		cookies.set(cookiesKey.accessKey, loginData.token.accessToken, {
-			secure: true,
-			path: '/',
-			expires: generateNext7Days(),
-			maxAge: 7 * DAYS_IN_SECOND
-		});
-		cookies.set(cookiesKey.refreshKey, loginData.token.refreshToken, {
-			secure: true,
-			path: '/',
-			expires: generateNext7Days(),
-			maxAge: 7 * DAYS_IN_SECOND
-		});
+		cookiesService.setAccessToken(cookies, loginData.token.accessToken);
+		cookiesService.setRefreshToken(cookies, loginData.token.refreshToken);
 
 		throw redirect(303, '/');
 	}

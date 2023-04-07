@@ -1,6 +1,5 @@
-import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import { errorMessages } from '$lib/client/constants/error.constant';
-import { DAYS_IN_SECOND, generateNext7Days, generateUnixSecond } from '$lib/client/utils/date.util';
+import { generateUnixSecond } from '$lib/client/utils/date.util';
 import type {
 	CreateSessionDto,
 	GetUserToken,
@@ -11,10 +10,11 @@ import { createId } from '@paralleldrive/cuid2';
 import { generateHash } from '../utils/hash.util';
 import { generateToken, verifyToken } from '../utils/jwt-token';
 import prisma from '../utils/prisma';
+import type { CookiesService } from './cookies.service';
 import type { UserService } from './user.service';
 
 export class AuthService {
-	constructor(private userService: UserService) {}
+	constructor(private userService: UserService, private cookiesService: CookiesService) {}
 
 	async createSession(dto: CreateSessionDto) {
 		const sessionId = createId();
@@ -49,8 +49,7 @@ export class AuthService {
 	}
 
 	async getUserFromToken({ cookies }: GetUserToken) {
-		const accessToken = cookies.get(cookiesKey.accessKey);
-		const refreshToken = cookies.get(cookiesKey.refreshKey);
+		const { accessToken, refreshToken } = this.cookiesService.getTokens(cookies);
 
 		if (accessToken === undefined || refreshToken === undefined)
 			return { data: null, error: errorMessages.forbidden };
@@ -67,18 +66,8 @@ export class AuthService {
 				sessionId: payload.data.sessionId
 			});
 
-			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken, {
-				secure: true,
-				path: '/',
-				expires: generateNext7Days(),
-				maxAge: 7 * DAYS_IN_SECOND
-			});
-			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken, {
-				secure: true,
-				path: '/',
-				expires: generateNext7Days(),
-				maxAge: 7 * DAYS_IN_SECOND
-			});
+			this.cookiesService.setAccessToken(cookies, resultToken.token.accessToken);
+			this.cookiesService.setRefreshToken(cookies, resultToken.token.refreshToken);
 
 			payload = verifyToken(resultToken.token.accessToken);
 			if (!payload.data) return payload;

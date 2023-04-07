@@ -26,5 +26,6 @@ jobs:
             source ~/.nvm/nvm.sh
             npm --help
             pnpm install
+            npx prisma generate
             pnpm build
             pm2 restart cashier-app
