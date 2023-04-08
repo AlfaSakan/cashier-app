@@ -54,6 +54,9 @@ devDependencies:
   '@types/jsonwebtoken':
     specifier: ^9.0.1
     version: 9.0.1
+  '@types/w3c-image-capture':
+    specifier: ^1.0.7
+    version: 1.0.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.54.1
     version: 5.56.0(@typescript-eslint/parser@5.56.0)(eslint@8.36.0)(typescript@4.9.5)
@@ -832,6 +835,16 @@ packages:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
       '@types/jest': 29.5.0
+    dev: true
+
+  /@types/w3c-image-capture@1.0.7:
+    resolution: {integrity: sha512-BNmjJT+yjwVzB6N5kf1/m9YZMF//e3JAcII+TIuhRkALn7UD9xZX0R1azVGqqyYuQKbQ6UskC+zSQctnsk9zHg==}
+    dependencies:
+      '@types/webrtc': 0.0.34
+    dev: true
+
+  /@types/webrtc@0.0.34:
+    resolution: {integrity: sha512-PZ15X7RNyGETO1lcAJl22vMfC7vc7WD/mRYA7iP7E+N/shLJzajHXwtWVMIuyuIoHTMhDcJO9poq+Xnmoy0p+g==}
     dev: true
 
   /@types/yargs-parser@21.0.0:
