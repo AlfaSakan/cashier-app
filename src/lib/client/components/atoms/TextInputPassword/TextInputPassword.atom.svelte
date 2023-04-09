@@ -20,7 +20,6 @@
 <div class="form-control w-full">
 	<label for={name} class="label">
 		<span class="label-text font-semibold">{label}</span>
-		<!-- <span class="label-text-alt">Alt label</span> -->
 	</label>
 	<div class="input input-bordered w-full flex items-center gap-2 pl-0">
 		<input

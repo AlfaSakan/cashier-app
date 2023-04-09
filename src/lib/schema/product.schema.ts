@@ -11,13 +11,15 @@ export const unit = z.string().trim().toLowerCase();
 export const price = z.coerce.number().min(0);
 export const amount = z.coerce.number().min(0);
 export const productId = z.string();
+export const barcode = z.string().optional();
 
 export const createProductDto = z.object({
 	name: productName,
 	description: productDescription,
 	price,
 	amount,
-	unit
+	unit,
+	barcode
 });
 
 export const updateProductDto = z.object({
@@ -25,7 +27,6 @@ export const updateProductDto = z.object({
 	description: productDescription.optional(),
 	price: price.optional(),
 	amount: price.optional(),
-	userId: userId,
 	id: productId
 });
 

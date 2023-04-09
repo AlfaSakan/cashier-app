@@ -1,11 +1,7 @@
 import type { LoginDto } from '$lib/schema/session.schema';
 import { authService, cookiesService } from '$lib/server/service';
 import { error, fail, redirect } from '@sveltejs/kit';
-import type { Actions, PageServerLoad } from './$types';
-
-export const load: PageServerLoad = async () => {
-	return {};
-};
+import type { Actions } from './$types';
 
 export const actions: Actions = {
 	signIn: async ({ request, cookies }) => {

@@ -9,7 +9,8 @@ export const productMock: Product = {
 	name: 'name',
 	price: 1000,
 	userId,
-	unit: 'bungkus'
+	unit: 'bungkus',
+	barcode: ''
 };
 
 export const productMock2: Product = {
@@ -20,5 +21,6 @@ export const productMock2: Product = {
 	name: 'name',
 	price: 2000,
 	userId,
-	unit: 'bungkus'
+	unit: 'bungkus',
+	barcode: ''
 };

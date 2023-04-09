@@ -13,7 +13,7 @@
 	</label>
 	<textarea
 		{placeholder}
-		class="textarea textarea-bordered h-24 w-full resize-none focus:outline-none focus:outline-offset-0 bg-base-200"
+		class="textarea textarea-bordered h-24 w-full resize-none focus:outline-none focus:outline-offset-0 bg-transparent"
 		id={name}
 		{name}
 		{value}

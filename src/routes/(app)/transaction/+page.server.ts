@@ -1,29 +1,20 @@
 import { transactionService } from '$lib/server/service';
 import { error, redirect } from '@sveltejs/kit';
-import type { Actions, PageServerLoad } from './$types';
+import type { Actions } from './$types';
 
 type FormData = {
 	moneyPaid: string;
 	products: string;
-	userId: string;
-};
-
-export const load: PageServerLoad = async ({ parent }) => {
-	const { data } = await parent();
-
-	return {
-		user: data
-	};
 };
 
 export const actions: Actions = {
-	confirmTransaction: async ({ request }) => {
+	confirmTransaction: async ({ request, locals }) => {
 		const formData = Object.fromEntries(await request.formData()) as FormData;
 
 		const { error: err } = await transactionService.createTransaction({
 			moneyPaid: Number(formData.moneyPaid),
 			products: JSON.parse(formData.products),
-			userId: formData.userId
+			userId: locals.user.id
 		});
 
 		if (err) throw error(400, { message: err });

@@ -1,9 +1,7 @@
 import { transactionService } from '$lib/server/service';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ parent }) => {
-	const { data } = await parent();
-
-	const { transactions } = await transactionService.findListTransactions(data.id);
+export const load: PageServerLoad = async ({ locals }) => {
+	const { transactions } = await transactionService.findListTransactions(locals.user.id);
 	return { transactions };
 };
