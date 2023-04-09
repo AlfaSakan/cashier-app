@@ -14,10 +14,6 @@
 
 	let loading = false;
 
-	function showToast() {
-		toast.error('ERROR NICH');
-	}
-
 	const submitForm: SubmitFunction = async ({ data, cancel }) => {
 		loading = true;
 		const formData = Object.fromEntries(data);

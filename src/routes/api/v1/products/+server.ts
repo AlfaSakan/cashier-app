@@ -1,10 +1,10 @@
-import { authService, productService } from '$lib/server/service';
+import { productService } from '$lib/server/service';
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ cookies }) => {
-	const { data } = await authService.getUserFromToken({ cookies });
+export const GET: RequestHandler = async ({ locals }) => {
+	const { user } = locals;
 
-	productService.findListProductByUserId;
+	productService.findListProductByUserId(user.id);
 
 	return new Response();
 };

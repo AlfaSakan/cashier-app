@@ -40,6 +40,7 @@
 	}
 
 	function onScanSuccess(decodedText: string, decodedResult: Html5QrcodeResult) {
+		console.warn({ decodedResult });
 		if (user === null) {
 			alert(`Code matched = ${decodedText}`);
 			return;
