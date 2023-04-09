@@ -151,4 +151,47 @@ describe('ProductService', () => {
 			expect(products).toEqual(null);
 		});
 	});
+
+	describe('calculateAmountProduct', () => {
+		it('should be able to calculate amount product', async () => {
+			const spyOn = vi.spyOn(productService, 'validatePermission');
+			spyOn.mockResolvedValueOnce({ product: productMock, error: null });
+
+			prismaMock.product.update.mockResolvedValueOnce({ ...productMock, amount: 7 });
+
+			const result = await productService.calculateAmountProduct({
+				userId: userMock.id,
+				id: productMock.id,
+				subtract: 3
+			});
+
+			expect(result).toEqual({ product: { ...productMock, amount: 7 }, error: null });
+		});
+
+		it('should failed amount not enough', async () => {
+			const spyOn = vi.spyOn(productService, 'validatePermission');
+			spyOn.mockResolvedValueOnce({ product: { ...productMock, amount: 2 }, error: null });
+
+			const result = await productService.calculateAmountProduct({
+				userId: userMock.id,
+				id: productMock.id,
+				subtract: 3
+			});
+
+			expect(result).toEqual({ product: null, error: errorMessages['product-not-enough'] });
+		});
+
+		it('should failed at validate permission', async () => {
+			const spyOn = vi.spyOn(productService, 'validatePermission');
+			spyOn.mockResolvedValueOnce({ product: null, error: errorMessages['product-not-found'] });
+
+			const result = await productService.calculateAmountProduct({
+				userId: userMock.id,
+				id: productMock.id,
+				subtract: 3
+			});
+
+			expect(result).toEqual({ product: null, error: errorMessages['product-not-found'] });
+		});
+	});
 });

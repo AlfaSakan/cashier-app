@@ -1,27 +1,33 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { BottomNavigation, HeaderNavigation } from '$lib/client/components';
+	import { HeaderNavigation, SidebarNavigation } from '$lib/client/components';
+	import { themeStore } from '$lib/client/store/theme.store';
 	import { Toaster } from 'svelte-french-toast';
+
+	let inputRef: HTMLInputElement;
+	$: checkedTheme = $themeStore === 'emerald';
+
+	function closeSidebar() {
+		inputRef.checked = false;
+	}
+
+	function handleThemeToggle() {
+		const dataTheme = checkedTheme ? 'dark' : 'emerald';
+		document.documentElement.setAttribute('data-theme', dataTheme);
+		localStorage.setItem('data-theme', dataTheme);
+		$themeStore = dataTheme;
+	}
 </script>
 
 <div class="drawer drawer-mobile">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
 		<!-- Page content here -->
-		<HeaderNavigation />
+		<HeaderNavigation backIcon rightIcon={false} />
 		<div class="flex flex-col p-4 mb-16">
 			<slot />
 		</div>
 		<Toaster />
 	</div>
 
-	<BottomNavigation currentPage={$page.url.pathname} />
-	<div class="drawer-side">
-		<label for="my-drawer-2" class="drawer-overlay" />
-		<ul class="menu p-4 w-80 bg-base-100 text-base-content">
-			<!-- Sidebar content here -->
-			<li><a href="/">Sidebar Item 1</a></li>
-			<li><a href="/">Sidebar Item 2</a></li>
-		</ul>
-	</div>
+	<SidebarNavigation {closeSidebar} onThemeToggle={handleThemeToggle} {checkedTheme} />
 </div>

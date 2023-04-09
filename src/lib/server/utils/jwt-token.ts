@@ -5,6 +5,7 @@ import jwt, { type JwtPayload } from 'jsonwebtoken';
 export type Payload = {
 	userId: string;
 	email: string;
+	sessionId: string;
 };
 
 function signJwt(payload: string | object, expiresIn: string | number) {

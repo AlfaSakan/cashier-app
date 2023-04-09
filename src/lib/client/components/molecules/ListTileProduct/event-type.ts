@@ -11,9 +11,21 @@ export interface ListTileDispatch {
 		selectedAmount: number;
 		productId: string;
 	};
+	input: {
+		productId: string;
+		inputAmount: number;
+	};
+	blur: {
+		productId: string;
+	};
 }
 
 export interface ListTileEvent {
 	selectedAmount: number;
 	productId: string;
+}
+
+export interface ListTileInputEvent {
+	productId: string;
+	inputAmount: number;
 }

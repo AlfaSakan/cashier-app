@@ -22,12 +22,12 @@ export default defineConfig({
 				'src/**/event-type.ts',
 				'src/routes/**/*'
 			],
-			reporter: ['json', 'text'],
+			reporter: ['text'],
 			all: true,
-			lines: 60,
-			functions: 60,
-			branches: 60,
-			statements: 60
+			lines: 80,
+			functions: 80,
+			branches: 80,
+			statements: 80
 		},
 		setupFiles: ['src/setupTest.js']
 	}

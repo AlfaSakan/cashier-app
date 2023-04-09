@@ -3,9 +3,9 @@
 	import { TextInput, TextInputArea } from '$lib/client/components';
 	import { validateData } from '$lib/client/utils/validate-data.util';
 	import { createProductDto } from '$lib/schema/product.schema';
-	import type { PageData } from './$types';
+	import type { PageServerData } from './$types';
 
-	export let data: PageData;
+	export let data: PageServerData;
 	$: user = data.user;
 
 	let fieldErrors: Record<string, string>;

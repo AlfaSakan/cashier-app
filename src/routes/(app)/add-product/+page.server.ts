@@ -8,8 +8,6 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ parent }) => {
 	const { data } = await parent();
 
-	if (data === null) throw redirect(301, '/login');
-
 	return { user: data };
 };
 
@@ -26,6 +24,6 @@ export const actions: Actions = {
 		const { error: errProduct } = await productService.createProduct({ ...data });
 		if (errProduct !== null) throw error(400, errProduct);
 
-		throw redirect(301, '/warehouse');
+		throw redirect(301, '/store');
 	}
 };

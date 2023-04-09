@@ -1,25 +1,32 @@
-import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import { errorMessages } from '$lib/client/constants/error.constant';
 import { generateUnixSecond } from '$lib/client/utils/date.util';
-import type { CreateSessionDto, GetUserToken, LoginDto } from '$lib/schema/session.schema';
+import type {
+	CreateSessionDto,
+	GetUserToken,
+	LoginDto,
+	UpdateSessionDto
+} from '$lib/schema/session.schema';
+import { createId } from '@paralleldrive/cuid2';
 import { generateHash } from '../utils/hash.util';
 import { generateToken, verifyToken } from '../utils/jwt-token';
 import prisma from '../utils/prisma';
+import type { CookiesService } from './cookies.service';
 import type { UserService } from './user.service';
 
 export class AuthService {
-	constructor(private userService: UserService) {}
+	constructor(private userService: UserService, private cookiesService: CookiesService) {}
 
 	async createSession(dto: CreateSessionDto) {
-		const token = generateToken({ email: dto.email, userId: dto.userId });
-
+		const sessionId = createId();
+		const token = generateToken({ email: dto.email, userId: dto.userId, sessionId });
 		const hashToken = await generateHash(token.refreshToken);
 
 		await prisma.session.create({
 			data: {
+				id: sessionId,
 				userAgent: dto.userAgent,
 				createdAt: generateUnixSecond(),
-				updatedAt: generateUnixSecond(),
+				updatedAt: dto.updatedAt || generateUnixSecond(),
 				hashToken,
 				userId: dto.userId
 			}
@@ -41,9 +48,8 @@ export class AuthService {
 		return result;
 	}
 
-	async getUserFromToken({ userAgent, cookies }: GetUserToken) {
-		const accessToken = cookies.get(cookiesKey.accessKey);
-		const refreshToken = cookies.get(cookiesKey.refreshKey);
+	async getUserFromToken({ cookies }: GetUserToken) {
+		const { accessToken, refreshToken } = this.cookiesService.getTokens(cookies);
 
 		if (accessToken === undefined || refreshToken === undefined)
 			return { data: null, error: errorMessages.forbidden };
@@ -54,14 +60,14 @@ export class AuthService {
 			payload = verifyToken(refreshToken);
 			if (!payload.data) return payload;
 
-			const resultToken = await this.createSession({
+			const resultToken = await this.updateSession({
 				email: payload.data.email,
-				userAgent,
-				userId: payload.data.userId
+				userId: payload.data.userId,
+				sessionId: payload.data.sessionId
 			});
 
-			cookies.set(cookiesKey.accessKey, resultToken.token.accessToken);
-			cookies.set(cookiesKey.refreshKey, resultToken.token.refreshToken);
+			this.cookiesService.setAccessToken(cookies, resultToken.token.accessToken);
+			this.cookiesService.setRefreshToken(cookies, resultToken.token.refreshToken);
 
 			payload = verifyToken(resultToken.token.accessToken);
 			if (!payload.data) return payload;
@@ -72,6 +78,27 @@ export class AuthService {
 		});
 		if (!user) return { data: null, error: errorMessages['user-not-found'] };
 
-		return { data: { ...user, hash: undefined }, error: null };
+		return { data: { ...user, hash: undefined, sessionId: payload.data.sessionId }, error: null };
+	}
+
+	async updateSession(dto: UpdateSessionDto) {
+		const token = generateToken({ email: dto.email, userId: dto.userId, sessionId: dto.sessionId });
+		const hashToken = await generateHash(token.refreshToken);
+
+		await prisma.session.update({
+			where: { id: dto.sessionId },
+			data: {
+				updatedAt: generateUnixSecond(),
+				hashToken
+			}
+		});
+
+		return { token, error: null };
+	}
+
+	async deleteSession(sessionId: string) {
+		await prisma.session.delete({ where: { id: sessionId } });
+
+		return { ok: true, error: null };
 	}
 }

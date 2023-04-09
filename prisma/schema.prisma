@@ -20,6 +20,10 @@ model User {
   hash  String
   level String @default("user") @db.VarChar(10)
 
+  storeName    String @default("") @db.VarChar(50)
+  placeOfBirth String @default("") @db.VarChar(50)
+  dateOfBirth  Int    @default(0)
+
   Session            Session[]
   Product            Product[]
   TransactionHistory TransactionHistory[]
@@ -63,7 +67,8 @@ model Product {
 model TransactionProduct {
   id String @id @default(cuid())
 
-  productSold Int
+  productSold  Int
+  currentPrice Int
 
   transactionHistoryId String
   transactionHistory   TransactionHistory @relation(fields: [transactionHistoryId], references: [id], onDelete: Cascade)

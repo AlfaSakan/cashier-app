@@ -3,17 +3,23 @@
 	export let name: string;
 	export let error = '';
 	export let placeholder = '';
-	export let type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' = 'text';
+	export let type: 'text' | 'number' | 'email' | 'password' | 'search' | 'url' | 'date' = 'text';
 	export let value: string | number = '';
 	export let disabled = false;
 	export let min: number | undefined = undefined;
+
+	let inputRef: HTMLInputElement;
+
+	function handleFocus() {
+		inputRef.showPicker();
+	}
 </script>
 
 <div class="form-control w-full">
 	<label for={name} class="label">
 		<span class="label-text font-semibold">{label}</span>
 	</label>
-	<div class="input input-bordered w-full flex items-center gap-2">
+	<div class="input input-bordered w-full flex items-center gap-2 bg-base-200">
 		<slot name="leading">
 			<div class="hidden" />
 		</slot>
@@ -29,6 +35,9 @@
 			autocomplete="off"
 			on:change
 			on:input
+			on:focus={handleFocus}
+			on:blur
+			bind:this={inputRef}
 		/>
 		<slot name="trailing">
 			<div class="hidden" />

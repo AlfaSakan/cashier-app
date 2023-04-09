@@ -2,7 +2,7 @@
 	export let width = '20';
 	export let height = '20';
 
-	let className = 'dark:fill-white fill-black';
+	let className = 'fill-current';
 	export { className as class };
 </script>
 

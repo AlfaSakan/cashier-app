@@ -3,7 +3,7 @@ import { generateUnixSecond } from '$lib/client/utils/date.util';
 import type {
 	CreateAdminDto,
 	CreateUserDto,
-	UpdateUserDto,
+	UpdateUserForm,
 	ValidatePasswordUser
 } from '../../schema/user.schema';
 import { generateHash, verifyHash } from '../utils/hash.util';
@@ -40,18 +40,26 @@ export class UserService {
 		};
 	}
 
-	async updateUser(dto: UpdateUserDto) {
-		const result = await this.validatePassword(dto);
-		if (result.user === null) return result;
+	async updateUser(dto: { userId: string } & Partial<UpdateUserForm>) {
+		let user = await prisma.user.findUnique({ where: { id: dto.userId } });
+		if (!user) return { user: null, error: errorMessages['user-not-found'] };
 
-		const data = { ...dto, password: undefined, id: undefined, email: undefined };
+		const data = {
+			...dto,
+			password: undefined,
+			id: undefined,
+			email: undefined,
+			dateOfBirth: new Date(dto.dateOfBirth || '').getTime() / 1000,
+			userId: undefined
+		};
 
-		const user = await prisma.user.update({
+		user = await prisma.user.update({
 			where: {
-				id: result.user.id
+				id: dto.userId
 			},
 			data: {
-				...data
+				...data,
+				updatedAt: generateUnixSecond()
 			}
 		});
 

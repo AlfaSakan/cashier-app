@@ -11,5 +11,6 @@ export const errorMessages = {
 	'password-wrong': 'Password salah',
 	forbidden: 'Tidak dapat diakses',
 	'failed-create-product': 'Gagal membuat product',
-	'token-expired': 'Token sudah kadaluarsa'
+	'token-expired': 'Token sudah kadaluarsa',
+	'product-not-enough': 'Produk tidak cukup'
 } as const;

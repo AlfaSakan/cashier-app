@@ -2,7 +2,7 @@
 	export let width = '20';
 	export let height = '20';
 
-	let className = 'dark:fill-white fill-black';
+	let className = 'stroke-current';
 	export { className as class };
 </script>
 
@@ -11,7 +11,6 @@
 	class={className}
 	fill="none"
 	viewBox="0 0 24 24"
-	stroke="currentColor"
 	{width}
 	{height}
 >

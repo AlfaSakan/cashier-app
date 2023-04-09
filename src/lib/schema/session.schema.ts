@@ -7,10 +7,16 @@ export interface CreateSessionDto {
 	email: string;
 	userId: string;
 	userAgent: string;
+	updatedAt?: number;
+}
+
+export interface UpdateSessionDto {
+	email: string;
+	sessionId: string;
+	userId: string;
 }
 
 export interface GetUserToken {
-	userAgent: string;
 	cookies: Cookies;
 }
 

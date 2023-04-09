@@ -1,11 +1,12 @@
-import { sessionMock, tokenMock } from '$lib/__mocks__/dummy/session.dummy';
-import { userMock } from '$lib/__mocks__/dummy/user.dummy';
-import prismaMock from '$lib/__mocks__/prisma';
 import { cookiesKey } from '$lib/client/constants/cookies.constant';
 import { errorMessages } from '$lib/client/constants/error.constant';
 import type { ValidatePasswordUser } from '$lib/schema/user.schema';
+import { sessionMock, tokenMock } from '$lib/__mocks__/dummy/session.dummy';
+import { userMock } from '$lib/__mocks__/dummy/user.dummy';
+import prismaMock from '$lib/__mocks__/prisma';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { AuthService } from './auth.service';
+import { CookiesService } from './cookies.service';
 import { UserService } from './user.service';
 
 vi.mock('./user.service', () => {
@@ -51,7 +52,7 @@ afterEach(() => {
 });
 
 describe('AuthService', () => {
-	const authService = new AuthService(new UserService());
+	const authService = new AuthService(new UserService(), new CookiesService());
 
 	describe('login', () => {
 		it('should success get token', async () => {
@@ -111,8 +112,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -140,8 +140,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -169,8 +168,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -199,8 +197,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
@@ -212,7 +209,7 @@ describe('AuthService', () => {
 		it('should error token expired', async () => {
 			prismaMock.user.findUnique.mockResolvedValueOnce(userMock);
 
-			const spySession = vi.spyOn(authService, 'createSession');
+			const spySession = vi.spyOn(authService, 'updateSession');
 			spySession.mockResolvedValueOnce({
 				error: null,
 				token: tokenMock
@@ -225,8 +222,7 @@ describe('AuthService', () => {
 					getAll: vi.fn(),
 					serialize: vi.fn(),
 					set: vi.fn()
-				},
-				userAgent: sessionMock.userAgent
+				}
 			});
 
 			expect(result).toEqual({
