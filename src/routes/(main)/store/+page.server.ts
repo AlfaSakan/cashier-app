@@ -2,10 +2,8 @@ import { productService } from '$lib/server/service';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ parent }) => {
-	const { data } = await parent();
-
-	const { error: err, products } = await productService.findListProductByUserId(data.id);
+export const load: PageServerLoad = async ({ locals }) => {
+	const { error: err, products } = await productService.findListProductByUserId(locals.user.id);
 
 	if (err !== null) throw error(400, { message: err });
 

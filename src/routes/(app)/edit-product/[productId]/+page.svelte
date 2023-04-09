@@ -7,7 +7,6 @@
 
 	export let data: PageServerData;
 	$: product = data.product;
-	$: user = data.user;
 
 	let fieldErrors: Record<string, string>;
 	let loading = false;
@@ -17,10 +16,9 @@
 		const formData = Object.fromEntries(data);
 		const { error } = validateData(formData, createProductDto);
 
-		data.set('userId', user.id);
-
 		if (error) {
 			fieldErrors = error as Record<string, string>;
+			loading = false;
 			cancel();
 		} else {
 			fieldErrors = {};

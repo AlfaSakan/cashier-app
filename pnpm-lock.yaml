@@ -81,6 +81,9 @@ devDependencies:
   eslint-plugin-svelte3:
     specifier: ^4.0.0
     version: 4.0.0(eslint@8.36.0)(svelte@3.57.0)
+  html5-qrcode:
+    specifier: ^2.3.7
+    version: 2.3.7
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -2264,6 +2267,10 @@ packages:
 
   /html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
+    dev: true
+
+  /html5-qrcode@2.3.7:
+    resolution: {integrity: sha512-Jmlok9Ynm49hgVXkdupWryf8o430proIFoQsRl1LmTg4Rq461W72omylR9yw9tsEMtswMEw3wacUM5y0agOBQA==}
     dev: true
 
   /http-proxy-agent@5.0.0:

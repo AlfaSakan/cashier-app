@@ -18,7 +18,7 @@ export class ProductService {
 		return { product, error: null };
 	}
 
-	async updateProduct(dto: UpdateProductDto) {
+	async updateProduct(dto: UpdateProductDto & { userId: string }) {
 		const { product } = await this.validatePermission(dto);
 		if (product === null) return { product: null, error: errorMessages['product-not-found'] };
 

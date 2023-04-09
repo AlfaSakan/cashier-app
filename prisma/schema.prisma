@@ -55,6 +55,7 @@ model Product {
   price       Int
   amount      Int
   unit        String @db.VarChar(20)
+  barcode     String @default("") @db.VarChar(50)
 
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)

@@ -15,6 +15,7 @@
 
 		if (error) {
 			fieldErrors = error as Record<string, string>;
+			loading = false;
 			cancel();
 		} else {
 			fieldErrors = {};

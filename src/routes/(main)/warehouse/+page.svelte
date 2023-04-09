@@ -47,7 +47,6 @@
 			toast.success('Produk berhasil dihapus');
 		} catch (error) {
 			toast.error('Terjadi kesalahan coba lagi nanti');
-			console.warn(error);
 		}
 	}
 

@@ -4,10 +4,6 @@
 	import { selectedProduct } from '$lib/client/store/product.store';
 	import { formatNumberToRupiah } from '$lib/client/utils/number.util';
 	import { toast } from 'svelte-french-toast';
-	import type { PageServerData } from './$types';
-
-	export let data: PageServerData;
-	$: userId = data.user.id;
 
 	let moneyPaid = 0;
 	let loading = false;
@@ -23,7 +19,6 @@
 	const submitForm: SubmitFunction = ({ data }) => {
 		loading = true;
 		data.set('products', JSON.stringify($selectedProduct));
-		data.set('userId', userId);
 
 		return ({ result, update }) => {
 			switch (result.type) {

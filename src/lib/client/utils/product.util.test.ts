@@ -1,28 +1,16 @@
-import type { Product } from '@prisma/client';
+import { productMock, productMock2 } from '$lib/__mocks__/dummy/product.dummy';
 import { describe, expect, it } from 'vitest';
 import { formatNumberToRupiah } from './number.util';
 import { countProductsAmount, countTotalProductsPrice } from './product.util';
 
-const productMock: Product = {
-	amount: 1,
-	createdAt: 0,
-	updatedAt: 0,
-	description: 'description',
-	id: 'id1',
-	name: 'name',
-	price: 1000,
-	unit: 'unit',
-	userId: 'user-id'
-};
-
 describe('countProductsAmount', () => {
 	it('should be able to count product', () => {
-		expect(countProductsAmount([productMock, productMock])).toBe(2);
+		expect(countProductsAmount([productMock, productMock2])).toBe(30);
 	});
 });
 
 describe('countTotalProductsPrice', () => {
 	it('should be able to count total price', () => {
-		expect(countTotalProductsPrice([productMock, productMock])).toBe(formatNumberToRupiah(2000));
+		expect(countTotalProductsPrice([productMock, productMock2])).toBe(formatNumberToRupiah(50000));
 	});
 });

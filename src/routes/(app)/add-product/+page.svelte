@@ -7,6 +7,7 @@
 
 	export let data: PageServerData;
 	$: user = data.user;
+	$: initForm = data.initForm;
 
 	let fieldErrors: Record<string, string>;
 	let loading = false;
@@ -20,6 +21,7 @@
 
 		if (error) {
 			fieldErrors = error as Record<string, string>;
+			loading = false;
 			cancel();
 		} else {
 			fieldErrors = {};
@@ -47,6 +49,13 @@
 
 <form action="?/createProduct" method="post" use:enhance={submitForm}>
 	<TextInput name="name" label="Nama Barang" placeholder="+3 huruf" error={fieldErrors?.name} />
+	<TextInput
+		name="barcode"
+		label="Kode Barcode"
+		placeholder="contoh: 01234567"
+		error={fieldErrors?.barcode}
+		value={initForm.barcode}
+	/>
 
 	<div class="grid grid-cols-2 gap-4">
 		<TextInput

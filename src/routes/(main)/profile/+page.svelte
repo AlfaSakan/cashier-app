@@ -14,6 +14,10 @@
 
 	let loading = false;
 
+	function showToast() {
+		toast.error('ERROR NICH');
+	}
+
 	const submitForm: SubmitFunction = async ({ data, cancel }) => {
 		loading = true;
 		const formData = Object.fromEntries(data);
@@ -22,10 +26,10 @@
 
 		if (error) {
 			fieldErrors = error as Record<string, string>;
+			loading = false;
 			cancel();
 		} else {
 			fieldErrors = {};
-			data.set('userId', user.id);
 		}
 
 		return ({ result, update }) => {
@@ -41,6 +45,7 @@
 					update();
 					break;
 			}
+
 			loading = false;
 		};
 	};
@@ -81,5 +86,5 @@
 			error={fieldErrors?.dateOfBirth}
 		/>
 	</div>
-	<button type="submit" class="w-full btn btn-primary">Simpan</button>
+	<button disabled={loading} type="submit" class="w-full btn btn-primary">Simpan</button>
 </form>
